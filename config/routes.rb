@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  devise scope :user do
+  devise_scope :user do
     get "user/:id", to: 'users/registrations#detail'
     get "signup",   to: 'users/registrations#new'
     get "login",    to: 'users/sessions#new'
