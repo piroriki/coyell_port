@@ -1,7 +1,6 @@
 h1
   | Homes#top
-p
-  | Find me in app/views/homes/top.html.erb
-= link_to "logout", admin_logout_path, data: { turbo_method: :delete }
-= link_to "signup", admin_signup_path
-= link_to "login", admin_login_path
+= link_to "ゲストログイン(閲覧用)", guest_login_path, data: { turbo_method: :post }
+= link_to "logout", admins_logout_path, data: { turbo_method: :delete }
+= link_to "signup", admins_signup_path
+= link_to "login", admins_login_path

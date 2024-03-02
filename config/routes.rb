@@ -13,12 +13,16 @@ Rails.application.routes.draw do
   # ユーザー用
   devise_for :users, controllers: { 
     registrations: "users/registrations",
-    sessions: "users/sessions"
-  }
+    sessions: "users/sessions",
+    passwords: "users/passwords"
+   }
+
   devise_scope :user do # devise提供の独自ルーティング
-    get "signup",      to: "registrations#new"
-    get "login",       to: "sessions#new"
-    delete "logout",   to: "sessions#destroy"
+    get "signup",        to: "registrations#new"
+    get "login",         to: "sessions#new"
+    delete "logout",     to: "sessions#destroy"
+    # ゲストログイン用ルーティング設定
+    post "guest_login",  to: "sessions#guest_login"
   end
 
   # トップページをホーム画面に設定
