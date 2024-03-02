@@ -1,6 +1,7 @@
 class Admin::BaseController < ApplicationController
-  before_action :authenticate_user!
+  skip_before_action :authenticate_user!
   before_action :check_admin
+  before_action :authenticate_administrator!
 
   layout "admin"
 

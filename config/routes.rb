@@ -1,15 +1,24 @@
 Rails.application.routes.draw do
-  devise_for :users, :controllers => { 
-    registrations: 'users/registrations',
-    sessions: 'users/sessions'
-  }
   
-  namespace :admin do # 管理者アカウント用に"/admin"のルーティング追加
-    devise_scope :user do # devise提供の独自ルーティング
+  # 管理者用
+  namespace :admins do
+    devise_scope :user do
       get "signup",      to: "registrations#new"
       get "login",       to: "sessions#new"
       delete "logout",   to: "sessions#destroy"
+      root to: "dashboard#index"
     end
+  end
+  
+  # ユーザー用
+  devise_for :users, controllers: { 
+    registrations: "users/registrations",
+    sessions: "users/sessions"
+  }
+  devise_scope :user do # devise提供の独自ルーティング
+    get "signup",      to: "registrations#new"
+    get "login",       to: "sessions#new"
+    delete "logout",   to: "sessions#destroy"
   end
 
   # トップページをホーム画面に設定
