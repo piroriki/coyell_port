@@ -9,6 +9,13 @@ gem "rails", "~> 7.0.8", ">= 7.0.8.1"
 # userモデルをdeviseで作成
 gem "devise"
 
+# レイアウト変更を簡便にするbootstrap使用
+gem "bootstrap"
+
+# slimでビューレイアウトを見やすく
+gem "html2slim"
+gem "slim-rails"
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
