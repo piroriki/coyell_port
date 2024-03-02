@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # 子供との関連づけ
+  has_many :children
+
   # ゲストログイン機能のメソッドをモデルで設定することで、
   # コントローラ内のコードが見やすくなる
   def self.guest
