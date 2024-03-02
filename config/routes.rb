@@ -3,15 +3,14 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
-
-  devise_scope :user do
-    get "user/:id",    to: "users/registrations#detail"
-    get "signup",      to: "users/registrations#new"
-    get "login",       to: "users/sessions#new"
-    delete "logout",   to: "users/sessions#destroy"
-    #get "logout",   to: "users/sessions#destroy"
-    #post "logout",  to: "users/sessions#destroy "
+  
+  namespace :admin do # 管理者アカウント用に"/admin"のルーティング追加
+    devise_scope :user do # devise提供の独自ルーティング
+      get "signup",      to: "registrations#new"
+      get "login",       to: "sessions#new"
+      delete "logout",   to: "sessions#destroy"
     end
+  end
 
   # トップページをホーム画面に設定
   root to: 'homes#top'
