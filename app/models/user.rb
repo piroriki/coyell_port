@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # enum で管理者権限の設定
+  enum role: { non_admin: 0, admin: 1 }
+
   # 子供との関連づけ
   has_many :children
 

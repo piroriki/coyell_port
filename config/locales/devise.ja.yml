@@ -138,6 +138,4 @@ ja: # devise専用日本語化設定
       expired: の有効期限が切れました。新しくリクエストしてください。
       not_found: は見つかりませんでした。
       not_locked: はロックされていません。
-      not_saved:
-        one: エラーが発生したため %{resource} は保存されませんでした。
-        other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+      not_saved: エラーが発生したため %{resource} は保存されませんでした。

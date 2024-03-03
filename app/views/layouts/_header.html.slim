@@ -1,0 +1,25 @@
+.header.navbar.navbar-fixed-top.navbar-inverse
+  .container
+    = link_to "ホーム画面", root_path
+    .navbar-header
+    button(id="hamburger" type="button" class="navbar-toggle collapsed")
+      span.sr-only.Toggler.navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+      ul.navbar-menu
+        .nav.navbar-nav.navbar-right.collapse.navbar-collapse
+        li = link_to "Home", root_path
+        li = link_to "Help", '#'
+        
+        - if user_signed_in?
+          li = link_to "ユーザー一覧", '#'
+          li.dropdown
+            a href = '#' id="acount" class="dropdown-toggle"
+            p アカウント情報
+            ul#dropdown-menu.dropdown-menu
+              li = link_to "プロフィール変更", edit_user_registration_path
+              li = link_to "ログアウト", logout_path, data: { "turbo-method": :delete }
+        - else
+          li = link_to "ユーザー新規登録", new_user_registration_path
+          li = link_to "ログイン", login_path
