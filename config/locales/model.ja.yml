@@ -51,22 +51,39 @@ ja:
       limited_access: 不正な侵入です
 
   helpers:
+    placeholder: # 入力フォーム用
+      user:
+        name: ユーザー名
+        email: メールアドレス
+        password: 半角英数字8文字以上
+        password_confirmation: 同じパスワードを再度入力
+      admin:
+        name: 管理者名
+        email: メールアドレス
+        password: 半角英数字8文字以上
+        password_confirmation: 上記パスワードを再度入力
+      child:
+        name: お子様のお名前
+        gender: お子様の性別
+        age: お子様の年齢
+        birthday: お子様のお誕生日
+
     submit:
-      create: "%{model}を登録する"
-      update: "%{model}を更新する"
-    account:
-      create: 保存する
+      create:  "%{model}を登録する"
+      update:  "%{model}を更新する"
+    account: 
+      create:  保存する
     login_form:
-      create: ログインする
-    select:
-      prompt: 選択してください
-    links:
-      show: 詳細
-      back: 戻る
+      create:  ログインする
+    select: 
+      prompt:  選択してください
+    links: 
+      show:    詳細
+      back:    戻る
       destroy: 削除
-      edit: 編集
-      new: 新規作成
-      cancel: キャンセル
+      edit:    編集
+      new:     新規作成
+      cancel:  キャンセル
 
   errors:
     format: "%{message}"
