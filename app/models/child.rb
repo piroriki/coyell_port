@@ -4,6 +4,6 @@ class Child < ApplicationRecord
   belongs_to :user
 
   # 性別の分類をあらかじめセットしておく
-  enum role: [:male, :female, :other]
+  enum gender: { other: 0, male: 1, female: 2 }
 
 end

@@ -1,0 +1,8 @@
+ja:
+  users:
+    registrations:
+      new:
+        title: ユーザー新規登録
+    sessions:
+      new:
+        title: ログイン

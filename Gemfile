@@ -18,6 +18,8 @@ gem "slim-rails"
 
 # railsの日本語化
 gem "rails-i18n"
+# enumの日本語化
+gem "enum_help"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"

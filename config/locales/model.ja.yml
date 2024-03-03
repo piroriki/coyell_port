@@ -1,0 +1,107 @@
+ja:
+  activerecord:
+    models: # 各種モデルの属性定義
+      admin:      管理者
+      user:       ユーザー
+      child:      子供
+    attributes:
+      admin:
+        name:     管理者名
+      user:
+        name:     ユーザー名
+      child:
+        name:     お名前
+        gender:   性別
+        age:      年齢
+        birthday: 誕生日
+
+  attributes: # 全モデルで共通する属性を定義
+    id:                    ID
+    email:                 メールアドレス
+    password:              パスワード
+    password_confirmation: パスワード(確認)
+    created_at:            作成日
+    updated_at:            更新日
+  
+  children: # 子供用フラッシュメッセージ共通化
+    notice: 
+      create:  登録しました
+      update:  更新しました
+      destroy: 削除しました
+      failed: 失敗しました
+  user: # 家族ユーザー用フラッシュ共通化
+    notice:
+      create:            "%{user_name}さんを登録しました"
+      update:            "%{user_name}さんを更新しました"
+      destroy:           "%{user_name}さんを削除しました"
+      failed:            情報の変更に失敗しました
+      login:             ログインしました
+      logout:            ログアウトしました
+      tag_follow:        タグをフォローしました
+      tag_not_follow:    タグをフォローできませんでした
+      tag_remove_follow: タグのフォローを解除しました
+  admins: # 管理者用フラッシュ共通化
+    notice: 
+      create:  管理者を新規追加しました
+      update:  管理者の情報を更新しました
+      destroy: 管理者を削除しました
+      failed:  情報の変更に失敗しました
+      login:   管理者のログインに成功しました
+      logout:  管理者がログアウトしました
+      limited_access: 不正な侵入です
+
+  helpers:
+    submit:
+      create: "%{model}を登録する"
+      update: "%{model}を更新する"
+    account:
+      create: 保存する
+    login_form:
+      create: ログインする
+    select:
+      prompt: 選択してください
+    links:
+      show: 詳細
+      back: 戻る
+      destroy: 削除
+      edit: 編集
+      new: 新規作成
+      cancel: キャンセル
+
+  errors:
+    format: "%{message}"
+    messages: &errors_messages # &error_messagesはエイリアスで *error_messagesで参照できるようにする
+      inclusion: "%{attribute}が正しくありません。"
+      exclusion: "%{attribute}は正しくありません。"
+      invalid: "%{attribute}が正しくありません。"
+      confirmation: "%{attribute}が一致しません。"
+      accepted: "%{attribute}をチェックしてください。"
+      empty: "%{attribute}を入力してください。"
+      blank: "%{attribute}を入力してください。"
+      required: "%{attribute}を入力してください。"
+      too_long: "%{attribute}は%{count}文字以内で入力してください。"
+      too_short: "%{attribute}は%{count}文字以上で入力してください。"
+      wrong_length: "%{attribute}は%{count}文字で入力してください。"
+      not_a_number: "%{attribute}は数値で入力してください。"
+      not_an_integer: "%{attribute}は整数で入力してください。"
+      greater_than: "%{attribute}は%{count}より大きい値を入力してください。"
+      greater_than_or_equal_to: "%{attribute}は%{count}以上の値を入力してください。"
+      equal_to: "%{attribute}は%{count}にしてください"
+      less_than: "%{attribute}は%{count}より小さい値にしてください"
+      less_than_or_equal_to: "%{attribute}は%{count}以下の値にしてください"
+      odd: "%{attribute}は奇数を入力してください。"
+      even: "%{attribute}は偶数を入力してください。"
+      taken: "%{attribute}がすでに使用されています。"
+      before: "%{attribute}は%{threshold}よりも前の%{type}を入力してください。"
+      before_or_equal_to: "%{attribute}は%{threshold}以前の%{type}を入力してください。"
+      after: "%{attribute}は%{threshold}よりも後の%{type}を入力してください。"
+      after_or_equal_to: "%{attribute}は%{threshold}以降の%{type}を入力してください。"
+      out_of_contract: "%{attribute}が契約期間外です。"
+      file_size_exceed: "%{file_name}のファイルサイズが大きすぎます。"
+      file_type_invalid: "アップロードできないファイル形式です。"
+      file_name_too_long: "ファイル名が長すぎます、%{count}文字以内の名称のファイルを指定してください。"
+      access_forbidden: "指定された情報にアクセスする権限がありません。"
+      pixel_size_too_large: "画像ファイルの大きさは %{width}、%{height} ピクセル以内にしてください。"
+      invalid_chars: "%{attribute}に使用できない文字が含まれています（%{chars}）。"
+      in_between: "の容量は%{min}以上%{max}以下にしてください。"
+      spoofed_media_type: "%{attribute}の拡張子と内容が一致していません。"

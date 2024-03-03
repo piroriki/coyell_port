@@ -8,11 +8,17 @@ Bundler.require(*Rails.groups)
 
 module CoyellPortfolio
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.0
-
+    # デフォルトの時間軸を日本に設定する
+    config.time_zone = "Tokyo"
+    config.active_record.default_timezone = :local
+    
     # デフォルトの言語を日本語に設定する
     config.i18n.default_locale = :ja
+    # 複数のロケールファイルのパスを通す
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 7.0
 
     # Configuration for the application, engines, and railties goes here.
     #

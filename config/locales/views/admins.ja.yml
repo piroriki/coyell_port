@@ -1,0 +1,15 @@
+ja:
+  admins:
+    registrations:
+      new:
+        title: 管理者新規登録
+    sessions:
+      new:
+        title: ログイン
+    index:
+      title: ユーザー一覧
+    show:
+      title: "%{user_name}さんのユーザー情報"
+    edit:
+      title: "%{user_name}さんのユーザー情報編集"
+  
