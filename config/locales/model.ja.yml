@@ -53,10 +53,10 @@ ja:
   helpers:
     placeholder: # 入力フォーム用
       user:
-        name: ユーザー名
+        name: お名前
         email: メールアドレス
         password: 半角英数字8文字以上
-        password_confirmation: 同じパスワードを再度入力
+        password_confirmation: 同じパスワードを再度入力d
       admin:
         name: 管理者名
         email: メールアドレス
