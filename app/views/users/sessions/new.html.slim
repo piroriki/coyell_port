@@ -1,6 +1,6 @@
 h2 = t".title"
 
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+= form_with model: @user, url: login_path, id: "current_user", class: "current_user", local: true do |f|
   
   .field
     = f.label :email
