@@ -71,6 +71,8 @@ ja:
     submit:
       create:  "%{model}を登録する"
       update:  "%{model}を更新する"
+      login:   ログインする
+      signup:  ユーザーを新規登録する
     account: 
       create:  保存する
     login_form:
