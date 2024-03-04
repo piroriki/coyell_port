@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     post "guest_login",  to: "users/sessions#guest_login"
   end
 
+  resources :child
+
   # トップページをホーム画面に設定
   root to: 'homes#top'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
