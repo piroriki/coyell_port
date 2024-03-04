@@ -16,7 +16,7 @@ class User < ApplicationRecord
     find_or_create_by!(email: "guest@example.com") do |user|
       user.password = SecureRandom.urlsafe_base64 # パスワードはランダムな文字列で作成
       user.name = "ゲスト"
-      user.skip_confirmation! #confirmable使用のため
+      #user.skip_confirmation! #confirmable使用のため
     end
   end
 end
