@@ -21,8 +21,11 @@ Rails.application.routes.draw do
     get "signup",        to: "users/registrations#new"
     get "login",         to: "users/sessions#new"
     delete "logout",     to: "users/sessions#destroy"
-    # ゲストログイン用ルーティング設定
+    get "edit_user",     to: "users/registrations#edit"
+    # ゲストログイン用
     post "guest_login",  to: "users/sessions#guest_login"
+    # ユーザープロフィール用
+    get "users/:id/profile", to: "users#show", as: "user_profile"
   end
 
   resources :child
