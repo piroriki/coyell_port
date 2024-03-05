@@ -1,6 +1,6 @@
-h1
-  | Homes#top
-= link_to "ゲストログイン(閲覧用)",  guest_login_path, data: { turbo_method: :post }
-= link_to "logout",               logout_path, data: { turbo_method: :delete }
-= link_to "signup",               signup_path
-= link_to "login",                login_path
+h2 = t".title"
+
+= link_to t(".links.guest_login"), guest_login_path, data: { turbo_method: :post }
+= link_to t(".links.logout"),      logout_path, data: { turbo_method: :delete }
+= link_to t(".links.signup"),      signup_path
+= link_to t(".links.login"),       login_path
