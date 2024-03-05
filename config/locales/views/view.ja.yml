@@ -2,8 +2,20 @@ ja:
   layouts:
     header:
       links:
-        signup: ユーザー新規登録
-        login: ログイン
-        edit_profile: プロフィール編集
-        home: ホーム
-    
+        signup:        ユーザー新規登録
+        login:         ログイン
+        edit_profile:  プロフィール編集
+        home:          ホーム
+  helpers:
+    submit:
+      create:          登録する
+      update:          更新する
+      login:           ログインする
+      signup:          ユーザーを新規登録する
+    links: 
+      to_home:         ホーム
+      to_users_index:  ユーザー一覧
+      to_user_profile: プロフィール編集
+      to_user_signup:  ユーザー新規登録
+      to_user_login:   ログイン
+      logout:          ログアウト

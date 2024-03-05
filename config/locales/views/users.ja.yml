@@ -3,6 +3,10 @@ ja:
     registrations:
       new:
         title: ユーザー新規登録
+      edit:
+        title: プロフィール編集
     sessions:
       new:
         title: ログイン
+    show:
+      title: "%{user.name}さんのプロフィール"

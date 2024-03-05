@@ -9,6 +9,7 @@ ja:
         name:     管理者名
       user:
         name:     ユーザー名
+        current_password: 現在のパスワード
       child:
         name:     お名前
         gender:   性別
@@ -56,7 +57,8 @@ ja:
         name: お名前
         email: メールアドレス
         password: 半角英数字8文字以上
-        password_confirmation: 同じパスワードを再度入力d
+        password_confirmation: 同じパスワード
+        current_password: 変更前のパスワード
       admin:
         name: 管理者名
         email: メールアドレス
@@ -67,24 +69,10 @@ ja:
         gender: お子様の性別
         age: お子様の年齢
         birthday: お子様のお誕生日
-
-    submit:
-      create:  "%{model}を登録する"
-      update:  "%{model}を更新する"
-      login:   ログインする
-      signup:  ユーザーを新規登録する
     account: 
       create:  保存する
     select: 
       prompt:  選択してください
-    links: 
-      show:    詳細
-      back:    戻る
-      destroy: 削除
-      edit:    編集
-      new:     新規作成
-      cancel:  キャンセル
-
   errors:
     format: "%{message}"
     messages: &errors_messages # &error_messagesはエイリアスで *error_messagesで参照できるようにする
@@ -122,7 +110,6 @@ ja:
       invalid_chars: "%{attribute}に使用できない文字が含まれています（%{chars}）。"
       in_between: "の容量は%{min}以上%{max}以下にしてください。"
       spoofed_media_type: "%{attribute}の拡張子と内容が一致していません。"
-
   enum:
     child:
       gender:
