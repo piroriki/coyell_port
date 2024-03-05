@@ -75,8 +75,6 @@ ja:
       signup:  ユーザーを新規登録する
     account: 
       create:  保存する
-    login_form:
-      create:  ログインする
     select: 
       prompt:  選択してください
     links: 
