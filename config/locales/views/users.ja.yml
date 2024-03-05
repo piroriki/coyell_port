@@ -2,12 +2,7 @@ ja:
   users:
     registrations:
       new:
-        title:         ユーザー新規登録
-      edit:
-        title:         ユーザー情報編集
-        to_login_page: ログイン画面に戻る
+        title: ユーザー新規登録
     sessions:
       new:
-        title:         ログイン
-    show:
-      title:           "%{user.name}さんのプロフィール"
+        title: ログイン

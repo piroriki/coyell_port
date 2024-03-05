@@ -1,0 +1,9 @@
+ja:
+  layouts:
+    header:
+      links:
+        signup: ユーザー新規登録
+        login: ログイン
+        edit_profile: プロフィール編集
+        home: ホーム
+    
