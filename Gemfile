@@ -21,6 +21,9 @@ gem "rails-i18n"
 # enumの日本語化
 gem "enum_help"
 
+# デバッグ用
+gem "pry-rails"
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

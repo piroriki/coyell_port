@@ -1,9 +1,15 @@
 h2 = t".title"
 
+/ エラーメッセージが表示されるようにする
+- if @child.errors.present?
+  ul#error_explanation 
+    - child.error.full_messages.each do |message|
+      li = message 
+
 .nav.justify-content-end 
   = link_to t("children.links.to_children"), children_path, class: "nav-link"
 
-= form_with(model: @child, url: new_child_path, class: "nav-link", local: true) do |f|
+= form_with(model: @child, url: "/children", data: { turbo_method: :post }, class: "nav-link", local: true) do |f|
 
   .form-group 
     = f.label        :name 
@@ -20,6 +26,9 @@ h2 = t".title"
   .form-group 
     = f.label        :birthday
     = f.date_select  :birthday, use_month_numbers: true, start_year: 2000, end_year: Time.now.year, default: Date.new(2000, 1, 1), id: "child_birthday"
+
+  .form-group 
+    = f.hidden_field :user_id, value: current_user.id
 
   = f.submit(t"helpers.submit.create")
 

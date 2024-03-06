@@ -28,6 +28,7 @@ class ChildrenController < ApplicationController
 
   def create
     @child = Child.new(child_params)
+    binding.pry
     if @child.save
       redirect_to children_path, notice: "登録しました"
     else
