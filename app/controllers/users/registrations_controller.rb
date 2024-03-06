@@ -50,10 +50,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
   # end
 
-  # ユーザー新規登録後の遷移先を設定
-  def after_sign_up_path_for(resource)
-    root_path
-  end
+  private
+    
+    # ユーザー新規登録後、ホーム画面に遷移
+    def after_sign_up_path_for(resource)
+      root_path
+    end
+
+    # ユーザー情報更新後、プロフィール画面に遷移
+    def after_update_path_for(resource)
+      user_profile_path(id: current_user.id)
+    end
+
+    # パスワードなしでプロフィール編集できるようにする
+    def update_resource(resource, params)
+      resource.update_without_password(params)
+    end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

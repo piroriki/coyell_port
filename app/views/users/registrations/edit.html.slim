@@ -1,7 +1,5 @@
 h2 = t".title"
 
-  = resource_name.to_s.humanize
-
 = form_with model: @user, url: edit_user_registration_path, id: "edit-user", class: "edit-user", local: true do |f|
   /= render "users/shared/error_messages", resource: resource
 
@@ -19,8 +17,6 @@ h2 = t".title"
 
   .field
     = f.label :password
-    i
-      | (leave blank if you don't want to change it)
   = f.password_field :password, autofocus: true, autocomplete: "new-password", placeholder: true
   - if @minimum_password_length
     em
@@ -33,11 +29,9 @@ h2 = t".title"
 
   .field
     = f.label :current_password
-    i
-      | (we need your current password to confirm your changes)
   = f.password_field :current_password, autofocus: true, autocomplete: "current-password", placeholder: true
   
   .actions
-    = f.submit(t".helpers.submit.update")
+    = f.submit(t"helpers.submit.update")
 
 = link_to (t".to_login_page"), root_path, class: "link-below-user-form"

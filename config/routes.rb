@@ -18,14 +18,18 @@ Rails.application.routes.draw do
     passwords:     "users/passwords"
    }
   devise_scope :user do # devise提供の独自ルーティング
-    get "signup",        to: "users/registrations#new"
-    get "login",         to: "users/sessions#new"
-    delete "logout",     to: "users/sessions#destroy"
-    get "edit_user",     to: "users/registrations#edit"
+    get    "signup",      to: "users/registrations#new"
+    get    "login",       to: "users/sessions#new"
+    post   "login",       to: "users/sessions#create"
+    delete "logout",      to: "users/sessions#destroy"
+    # プロフィール編集用
+    #get    "edit_user",   to: "users/registrations#edit"
+    #patch  "edit_user",   to: "users/registrations#update"
+    #put    "edit_user",   to: "users/registrations#update"
     # ゲストログイン用
-    post "guest_login",  to: "users/sessions#guest_login"
+    post   "guest_login", to: "users/sessions#guest_login"
     # ユーザープロフィール用
-    get "users/:id/profile", to: "users#show", as: "user_profile"
+    get    "users/show",  to: "users#show", as: "user_profile"
   end
 
   resources :child

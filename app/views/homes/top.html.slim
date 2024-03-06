@@ -1,6 +1,7 @@
 h2 = t".title"
 
-= link_to t(".links.guest_login"), guest_login_path, data: { turbo_method: :post }
-= link_to t(".links.logout"),      logout_path, data: { turbo_method: :delete }
-= link_to t(".links.signup"),      signup_path
-= link_to t(".links.login"),       login_path
+= link_to t("helpers.links.guest_login"),     guest_login_path, data: { turbo_method: :post }
+= link_to t("helpers.links.to_user_signup"),  signup_path
+= link_to t("helpers.links.to_login"),        login_path
+= link_to t("helpers.links.logout"),          logout_path, data: { turbo_method: :delete }
+= link_to t("helpers.links.to_user_profile"), user_profile_path
