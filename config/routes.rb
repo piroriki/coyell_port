@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     get    "users/show",  to: "users#show", as: "user_profile"
   end
 
-  resources :child
+  resources :children
 
   # トップページをホーム画面に設定
   root to: 'homes#top'
