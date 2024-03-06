@@ -1,2 +1,25 @@
-h1 Children#new
-p Find me in app/views/children/new.html.slim
+h2 = t".title"
+
+.nav.justify-content-end 
+  = link_to t("children.links.to_children"), children_path, class: "nav-link"
+
+= form_with(model: @child, url: new_child_path, class: "nav-link", local: true) do |f|
+
+  .form-group 
+    = f.label        :name 
+    = f.text_field   :name, class: "form-control", id: "child_name"
+
+  .form-group 
+    = f.label        :gender 
+    = f.select       :gender, @gender_options, { include_blank: "性別を選択してください"}, class: "fnav-link", id: "child_gender"
+
+  .form-group 
+    = f.label        :age
+    = f.number_field :age, class: "form-control", id: "child_age"
+
+  .form-group 
+    = f.label        :birthday
+    = f.date_select  :birthday, use_month_numbers: true, start_year: 2000, end_year: Time.now.year, default: Date.new(2000, 1, 1), id: "child_birthday"
+
+  = f.submit(t"helpers.submit.create")
+

@@ -110,7 +110,7 @@ ja:
       invalid_chars: "%{attribute}に使用できない文字が含まれています（%{chars}）。"
       in_between: "の容量は%{min}以上%{max}以下にしてください。"
       spoofed_media_type: "%{attribute}の拡張子と内容が一致していません。"
-  enum:
+  enums: # enum用
     child:
       gender:
         other:  その他

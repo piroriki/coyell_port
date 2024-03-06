@@ -22,13 +22,14 @@ class ChildrenController < ApplicationController
   end
 
   def new
-    @child = Child.new(child_params)
+    @child = Child.new
+    @gender_options = Child.genders_i18n.invert.map{|key,value|[key,value]}
   end
 
   def create
     @child = Child.new(child_params)
     if @child.save
-      redirect_to child_path, notice: "登録しました"
+      redirect_to children_path, notice: "登録しました"
     else
       render :new, status: :unproccesable_entity
     end
