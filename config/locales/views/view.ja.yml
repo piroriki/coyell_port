@@ -1,5 +1,5 @@
 ja:
-  dictionary:
+  dictionary: # 全ファイル共通で使い回す翻訳情報はここに追記
     links: 
       to_home:         ホーム
       to_users_index:  ユーザー一覧
@@ -10,8 +10,6 @@ ja:
       to_login:        ログイン
       logout:          ログアウト
       guest_login:     ゲストログイン(閲覧用)
-      # 各種コントローラ用リンク
-      to_children:  子供一覧
   helpers:
     submit:
       create:          登録する

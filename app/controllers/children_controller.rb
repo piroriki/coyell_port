@@ -1,7 +1,7 @@
 class ChildrenController < ApplicationController
   
   def index
-    @child = Children.all
+    @children = Child.all
   end
 
   def show

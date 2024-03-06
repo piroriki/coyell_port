@@ -1,2 +1,19 @@
-h1 Children#index
-p Find me in app/views/children/index.html.slim
+h2 = t".title"
+
+= link_to t("children.links.to_new_child"), new_child_path, class: "btn btn-primary"
+
+.mb-3 
+table.table.table-hover 
+  thead.thead-default 
+    tr 
+      th = Child.human_attribute_name(:name)
+      th = Child.human_attribute_name(:gender)
+      th = Child.human_attribute_name(:age)
+      th = Child.human_attribute_name(:birthday)
+  tbody 
+    - @children.each do |child|
+      tr 
+        td = child.name
+        td = child.gender
+        td = child.age
+        td = child.birthday
