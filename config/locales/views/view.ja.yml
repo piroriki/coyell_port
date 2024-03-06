@@ -1,17 +1,5 @@
 ja:
-  layouts:
-    header:
-      links:
-        signup:        ユーザー新規登録
-        login:         ログイン
-        edit_profile:  プロフィール編集
-        home:          ホーム
-  helpers:
-    submit:
-      create:          登録する
-      update:          更新する
-      login:           ログインする
-      signup:          ユーザーを新規登録する
+  dictionary:
     links: 
       to_home:         ホーム
       to_users_index:  ユーザー一覧
@@ -22,3 +10,11 @@ ja:
       to_login:        ログイン
       logout:          ログアウト
       guest_login:     ゲストログイン(閲覧用)
+      # 各種コントローラ用リンク
+      to_children:  子供一覧
+  helpers:
+    submit:
+      create:          登録する
+      update:          更新する
+      login:           ログインする
+      signup:          ユーザーを新規登録する
