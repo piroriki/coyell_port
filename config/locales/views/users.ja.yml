@@ -9,4 +9,4 @@ ja:
       new:
         title: ログイン
     show:
-      title: "%{user.name}さんのプロフィール"
+      title:   プロフィール

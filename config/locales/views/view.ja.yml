@@ -15,7 +15,10 @@ ja:
     links: 
       to_home:         ホーム
       to_users_index:  ユーザー一覧
-      to_user_profile: プロフィール編集
+      to_user_profile: プロフィール
+      to_edit_profile: プロフィール編集
       to_user_signup:  ユーザー新規登録
-      to_user_login:   ログイン
+      to_signup:       ユーザー新規登録
+      to_login:        ログイン
       logout:          ログアウト
+      guest_login:     ゲストログイン(閲覧用)

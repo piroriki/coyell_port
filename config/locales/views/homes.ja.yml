@@ -1,9 +1,4 @@
 ja:
   homes:
     top:
-      title:       ホーム
-      links:
-        guest_login: ゲストログイン(閲覧用)
-        logout:      ログアウト
-        signup:      ユーザー新規登録
-        login:       ログイン
+      title: ホーム
