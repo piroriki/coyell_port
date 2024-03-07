@@ -9,7 +9,7 @@ Bundler.require(*Rails.groups)
 module CoyellPortfolio
   class Application < Rails::Application
     # デフォルトの時間軸を日本に設定する
-    config.time_zone = "Tokyo"
+    config.time_zone = "Asia/Tokyo"
     config.active_record.default_timezone = :local
     
     # デフォルトの言語を日本語に設定する

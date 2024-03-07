@@ -15,9 +15,9 @@ table.table.table-hover
   tbody 
     - @children.each do |child|
       tr 
-        td = link_to "#{child.name}", child_path(id: child.id)
+        td = link_to "#{child.name}さん", child_path(id: child.id)
         td = child.gender_i18n
-        td = child.age
-        td = child.birthday
+        td = "#{child.age}歳"
+        td = child.birthday.strftime("%Y年%m月%d日")
         td = link_to t("children.links.to_edit_child"), edit_child_path(id: child.id), class: "btn btn-primary"
         td = link_to t("children.links.destroy_child"), child, data: { turbo_method: :delete, turbo_confirm: "#{child.name}さんを削除してもよろしいですか?"}, class: "btn btn-danger"

@@ -9,7 +9,7 @@ h2 = t".title"
 .nav.justify-content-end 
   = link_to t("children.links.to_children"), children_path, class: "nav-link"
 
-= form_with(model: @child, url: "/children", data: { turbo_method: :post }, class: "nav-link", local: true) do |f|
+= form_with(model: @child, data: { turbo_method: :post }, class: "nav-link", local: true) do |f|
 
   .form-group 
     = f.label         :name

@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:child_birthday] = "%Y年%m月%d日"

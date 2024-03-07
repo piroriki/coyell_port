@@ -15,9 +15,9 @@ table.table.table-hover
 
   tbody 
       tr 
-        td = @child.name
+        td = "#{@child.name}さん"
         td = @child.gender_i18n
-        td = @child.age
-        td = @child.birthday
+        td = "#{@child.age}歳"
+        td = @child.birthday.strftime("%Y年%m月%d日")
         td = link_to t("children.links.to_edit_child"), edit_child_path
         td = link_to t("children.links.destroy_child"), @child, data: { turbo_method: :delete, turbo_confirm: "#{@child.name}さんを削除してもよろしいですか?"}, class: "btn btn-danger"
