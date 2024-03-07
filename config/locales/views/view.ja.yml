@@ -1,6 +1,6 @@
 ja:
   dictionary: # 全ファイル共通で使い回す翻訳情報はここに追記
-    links: 
+    links:  #全ファイル共通のリンク
       to_home:         ホーム
       to_users_index:  ユーザー一覧
       to_user_profile: プロフィール
@@ -10,8 +10,11 @@ ja:
       to_login:        ログイン
       logout:          ログアウト
       guest_login:     ゲストログイン(閲覧用)
+    items: # 共通項目名
+      edit:            編集
+      destroy:         削除
   helpers:
-    submit:
+    submit: # 共通ボタン表記
       create:          登録する
       update:          更新する
       login:           ログインする

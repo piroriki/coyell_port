@@ -1,13 +1,15 @@
 ja:
   children:
     index: 
-      title: お子様一覧
+      title:         お子様一覧
     new:
-      title: お子様の新規登録
+      title:         お子様の新規登録
     show:
-      title: "%{child_name}さんの詳細"
+      title:         "%{child_name}さんの詳細"
     edit:
-      title: "{child_name}さんの情報編集"
+      title:         "{child_name}さんの情報編集"
     links:
-      to_new_child: お子様新規登録
-      to_children:  お子様一覧
+      to_new_child:  お子様新規登録
+      to_children:   お子様一覧
+      to_edit_child: 編集
+      destroy_child: 削除
