@@ -13,7 +13,7 @@ table.table.table-hover
   tbody 
     - @children.each do |child|
       tr 
-        td = child.name
+        td = link_to "#{child.name}", child_path(id: child.id)
         td = child.gender_i18n
         td = child.age
         td = child.birthday
