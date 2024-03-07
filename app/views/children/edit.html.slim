@@ -7,9 +7,9 @@ h2 = t".title"
       li = message 
 
 .nav.justify-content-end 
-  = link_to t("children.links.to_children"), url: "/children/:id/edit", data: { turbo_method: :patch }, class: "nav-link"
+= link_to t("children.links.to_children"), url: children_path, class: "nav-link"
 
-= form_with(model: @child, url: edit_child_path, data: { turbo_method: :put }, class: "nav-link", local: true) do |f|
+= form_with(model: @child, data: { turbo_method: :patch }, class: "nav-link", local: true) do |f|
 
   .form-group 
     = f.label        :name

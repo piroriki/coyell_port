@@ -14,9 +14,9 @@ class ChildrenController < ApplicationController
   end
 
   def update
-    @child = Child.update(child_params)
-    if @child.save
-      redirect_to child_path, notice: "更新完了しました"
+    @child = Child.find(params[:id])
+    if @child.update(child_params)
+      redirect_to child_path(id: @child.id), notice: "更新完了しました"
     else
       render :edit, status: :unproccesable_entity
     end
