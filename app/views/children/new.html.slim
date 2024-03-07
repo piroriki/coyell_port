@@ -14,6 +14,7 @@ h2 = t".title"
   .form-group 
     = f.label         :name
     = f.text_field    :name, autofocus: true, autocomplete: "name", class: "form-control", id: "child_name"
+    
   .form-group 
     = f.label        :gender 
     = f.select       :gender, @gender_options, { include_blank: "性別を選択してください"}, class: "fnav-link", id: "child_gender"
@@ -30,4 +31,3 @@ h2 = t".title"
     = f.hidden_field :user_id, value: current_user.id
 
   = f.submit(t"helpers.submit.create")
-

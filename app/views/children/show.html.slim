@@ -1,2 +1,23 @@
-h1 Children#show
-p Find me in app/views/children/show.html.slim
+h2 = t".title"
+
+= link_to t("children.links.to_new_child"), new_child_path, class: "btn btn-primary"
+
+.mb-3 
+table.table.table-hover 
+  thead.thead-default 
+    tr 
+      th = Child.human_attribute_name(:name)
+      th = Child.human_attribute_name(:gender)
+      th = Child.human_attribute_name(:age)
+      th = Child.human_attribute_name(:birthday)
+      th = t"dictionary.items.edit"
+      th = t"dictionary.items.destroy"
+
+  tbody 
+      tr 
+        td = @child.name
+        td = @child.gender_i18n
+        td = @child.age
+        td = @child.birthday
+        td = link_to t("children.links.to_edit_child"), edit_child_path
+        td = link_to t("children.links.destroy_child"), @child, data: { turbo_method: :delete, turbo_confirm: "#{@child.name}さんを削除してもよろしいですか?"}, class: "btn btn-danger"

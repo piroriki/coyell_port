@@ -1,2 +1,35 @@
-h1 Children#edit
-p Find me in app/views/children/edit.html.slim
+h2 = t".title"
+
+/ エラーメッセージが表示されるようにする
+- if @child.errors.present?
+  ul#error_explanation 
+    - child.error.full_messages.each do |message|
+      li = message 
+
+.nav.justify-content-end 
+  = link_to t("children.links.to_children"), url: "/children/:id/edit", data: { turbo_method: :patch }, class: "nav-link"
+
+= form_with(model: @child, url: edit_child_path, data: { turbo_method: :put }, class: "nav-link", local: true) do |f|
+
+  .form-group 
+    = f.label        :name
+    = f.text_field   :name, autofocus: true, autocomplete: "name", class: "form-control", id: "child_name"
+  
+  .form-group 
+    = f.label        :gender 
+    = f.select       :gender, @gender_options, { include_blank: "性別を選択してください"}, class: "fnav-link", id: "child_gender"
+
+  .form-group 
+    = f.label        :age
+    = f.number_field :age, autofocus: true, autocomplete: "age", class: "form-control", id: "child_age"
+
+  .form-group 
+    = f.label        :birthday
+    = f.date_select  :birthday, use_month_numbers: true, start_year: 2000, end_year: Time.now.year, default: Date.new(2000, 1, 1), id: "child_birthday"
+
+  .form-group 
+    = f.hidden_field :user_id, value: current_user.id
+
+  = f.submit(t"helpers.submit.update")
+
+
