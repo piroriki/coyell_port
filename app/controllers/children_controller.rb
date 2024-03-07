@@ -5,11 +5,12 @@ class ChildrenController < ApplicationController
   end
 
   def show
-    @child = Child.find_by(id: params[:id])
+    @child = Child.find(params[:id])
   end
 
   def edit
-    @child = Child.find_by(id: params[:id])
+    @child = Child.find(params[:id])
+    @gender_options = Child.genders_i18n.invert.map{|key,value|[key,value]}
   end
 
   def update
@@ -28,12 +29,17 @@ class ChildrenController < ApplicationController
 
   def create
     @child = Child.new(child_params)
-    binding.pry
     if @child.save
       redirect_to children_path, notice: "登録しました"
     else
       render :new, status: :unproccesable_entity
     end
+  end
+
+  def destroy
+    @child = Child.find(params[:id])
+    @child.destroy
+    redirect_to children_path, notice: "削除しました", status: :see_other
   end
 
   private

@@ -10,6 +10,8 @@ table.table.table-hover
       th = Child.human_attribute_name(:gender)
       th = Child.human_attribute_name(:age)
       th = Child.human_attribute_name(:birthday)
+      th = t"dictionary.items.edit"
+      th = t"dictionary.items.destroy"
   tbody 
     - @children.each do |child|
       tr 
@@ -17,3 +19,5 @@ table.table.table-hover
         td = child.gender_i18n
         td = child.age
         td = child.birthday
+        td = link_to t("children.links.to_edit_child"), edit_child_path(id: child.id), class: "btn btn-primary"
+        td = link_to t("children.links.destroy_child"), child, data: { turbo_method: :delete, turbo_confirm: "#{child.name}さんを削除してもよろしいですか?"}, class: "btn btn-danger"
