@@ -44,7 +44,8 @@ describe "子供管理機能", type: :system do
       end
   
       it "ユーザーAが登録した子供が表示される" do
-        expect(page).to have_content "最初の子供"
+        expect(page).to have_content "%{child_name}さんの詳細"
+        expect(page).to have_content "その他"
       end
     end
   end
