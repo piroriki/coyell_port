@@ -17,6 +17,11 @@ module CoyellPortfolio
     # 複数のロケールファイルのパスを通す
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
 
+    # testディレクトリの自動生成を止める
+    config.generators do |g|
+      g.test_framework false
+    end
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
