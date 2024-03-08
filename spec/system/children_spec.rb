@@ -19,5 +19,19 @@ describe "子供管理機能", type: :system do
         expect(page).to have_content "最初の子供"
       end
     end
+
+    context "ユーザーBがログインしている時" do
+      before do
+        FactoryBot.create(:user, name: "ユーザーB", email: "b@example.com")
+        visit login_path
+        fill_in "メールアドレス",  with: "b@example.com"
+        fill_in "パスワード",      with: "password"
+        click_button "ログインする"
+      end
+
+      it "ユーザーAが登録した子供が表示されない" do
+        expect(page).to have_no_content "最初の子供"
+      end
+    end
   end
 end
