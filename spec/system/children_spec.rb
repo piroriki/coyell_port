@@ -4,7 +4,7 @@ describe "子供管理機能", type: :system do
   describe "一覧表示機能" do
     before do
       user_a = FactoryBot.create(:user, name: "ユーザーA", email: "a@example.com")
-      FactoryBot.create(:child, name: "最初の子供", gender: 0, age: 0, birthday: "2024-01-01")
+      FactoryBot.create(:child, name: "最初の子供", gender: 0, age: 0, birthday: "2024-01-01", user: user_a)
     end
 
     context "ユーザーAがログインしている時" do
