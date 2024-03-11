@@ -9,13 +9,14 @@ h2 = t".title"
 /.nav.justify-content-end 
 /  = link_to t("children.links.to_children"), children_path, class: "nav-link"
 
-= form_with(model: @height, data: { turbo_method: :post }, class: "nav-link", local: true) do |f|
+/ ネストしたモデルでは、引数を配列として渡す
+= form_with(model: [@child, @height], data: { turbo_method: :post }, class: "nav-link", local: true) do |f|
 
   .form-group 
-    = f.label         :height
+    = f.label           :height
     = f.number_field    :height, autofocus: true, autocomplete: "height", class: "form-control", id: "height_height"
     
   .form-group 
-    = f.hidden_field :child_id, value: params[:child_id]
+    = f.hidden_field    :child_id, value: @child.id
 
   = f.submit(t"helpers.submit.create")
