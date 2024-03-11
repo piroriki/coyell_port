@@ -38,7 +38,11 @@ Rails.application.routes.draw do
   end
 
   # トップページをホーム画面に設定
-  root to: 'homes#top'
+  root to: "homes#top"
+
+  # 複数モデルを一つのビューに表示
+  get "record", to: "homes#record"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

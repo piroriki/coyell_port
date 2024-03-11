@@ -25,3 +25,4 @@ table.table.table-hover
                         data: { turbo_method: :delete, 
                         turbo_confirm: "#{@child.name}さんを削除してもよろしいですか?"}, class: "btn btn-danger"
         td = link_to t("heights.links.to_new_height"), new_child_height_path(@child)
+        td = link_to t("homes.links.to_record"), record_path

@@ -2,3 +2,7 @@ ja:
   homes:
     top:
       title: ホーム
+    record:
+      title: 記録一覧
+    links:
+      to_record: 記録一覧
