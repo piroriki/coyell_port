@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
   # 子供関連のモデルをネストする
   resources :children do
-    resources :heights
+    resources :heights, :weights
   end
 
   # トップページをホーム画面に設定
