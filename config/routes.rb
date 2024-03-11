@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'heights/new'
+  get 'heights/edit'
+  get 'heights/show'
   
   # 管理者用
   namespace :admin do
