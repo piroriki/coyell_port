@@ -4,6 +4,7 @@ ja:
       admin:      管理者
       user:       ユーザー
       child:      子供
+      height:     身長
     attributes:
       admin: # 管理者
         name:     管理者名
@@ -19,6 +20,8 @@ ja:
           other: その他
         age:      年齢
         birthday: 誕生日
+      height:
+        height:   身長
   attributes: # 全モデルで共通する属性を定義
     id:                    ID
     email:                 メールアドレス
