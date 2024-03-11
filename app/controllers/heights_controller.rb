@@ -39,7 +39,7 @@ class HeightsController < ApplicationController
   private
 
     def height_params
-      params.require(:height).permit(:height).merge(user_id: current_user.id)
+      params.require(:height).permit(:height).merge(child_id: params[:child_id])
     end
-    
+
 end
