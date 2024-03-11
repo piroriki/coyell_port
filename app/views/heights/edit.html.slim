@@ -6,14 +6,14 @@ h2 = t".title"
     - height.error.full_messages.each do |message|
       li = message 
 
-.nav.justify-content-end 
-= link_to t("children.links.to_children"), url: children_path, class: "nav-link"
+/.nav.justify-content-end 
+/= link_to t("children.links.to_children"), url: children_path, class: "nav-link"
 
 = form_with(model: @height, data: { turbo_method: :patch }, class: "nav-link", local: true) do |f|
 
   .form-group 
     = f.label        :height
-    = f.text_field   :height, autofocus: true, autocomplete: "height", class: "form-control", id: "height_height"
+    = f.number_field   :height, autofocus: true, autocomplete: "height", class: "form-control", id: "height_height"
 
   .form-group 
     = f.hidden_field :child_id, value: params[:child_id]
