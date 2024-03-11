@@ -1,2 +1,15 @@
-h1 Heights#show
-p Find me in app/views/heights/show.html.slim
+h2 = t".title"
+
+.mb-3 
+table.table.table-hover 
+  thead.thead-default 
+    tr 
+      th = Height.human_attribute_name(:height)
+  tbody 
+      tr 
+        td = @height.height
+        /td = link_to t("children.links.destroy_child"), @child, 
+                        data: { turbo_method: :delete, 
+                        turbo_confirm: "#{@child.name}さんを削除してもよろしいですか?"}, class: "btn btn-danger"
+        /td = link_to t("heights.links.to_new_height"), new_child_height_path(@child)
+
