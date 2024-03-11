@@ -32,7 +32,10 @@ Rails.application.routes.draw do
     get    "users/show",  to: "users#show", as: "user_profile"
   end
 
-  resources :children
+  # 子供関連のモデルをネストする
+  resources :children do
+    resources :heights
+  end
 
   # トップページをホーム画面に設定
   root to: 'homes#top'
