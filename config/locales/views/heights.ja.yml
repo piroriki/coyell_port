@@ -1,0 +1,14 @@
+ja:
+  height:
+    new:
+      title:          身長の新規作成
+    show:
+      title:          身長の詳細
+    edit:
+      title:          身長の編集
+    links:
+      to_new_height:  身長の登録
+      to_edit_height: 編集
+      to_show_height: 身長の詳細
+      destroy_height: 削除
+    
