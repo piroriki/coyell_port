@@ -10,7 +10,8 @@ h2 = t".title"
 /  = link_to t("children.links.to_children"), children_path, class: "nav-link"
 
 / ネストしたモデルでは、引数を配列として渡す
-= form_with(model: [@child, @height], data: { turbo_method: :post }, class: "nav-link", local: true) do |f|
+= form_with(model: [@child, @height],
+ data: { turbo_method: :post }, class: "nav-link", local: true) do |f|
 
   .form-group 
     = f.label           :height
