@@ -19,7 +19,7 @@ class HeightsController < ApplicationController
   end
 
   def edit
-    @child = Child.find(params[:child_id])
+    @child  = Child.find(params[:child_id])
     @height = Height.find(params[:id])
   end
 
@@ -34,6 +34,7 @@ class HeightsController < ApplicationController
   end
 
   def show
+    @child  = Child.find(params[:child_id])
     @height = Height.find(params[:id])
   end
 
