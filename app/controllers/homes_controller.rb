@@ -3,7 +3,7 @@ class HomesController < ApplicationController
   end
 
   def record
-    @child = Child.find(params[:child_id])
+    @children = Child.all
     @heights = Height.all
     #@mixed_array = @height
     #@mixed_array.sort{ |f,s| f.created_at <=> s.created_at }
