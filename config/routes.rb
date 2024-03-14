@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'temperatures/new'
-  get 'temperatures/edit'
-  get 'temperatures/show'
 
   # 管理者用
   namespace :admin do
@@ -37,7 +34,7 @@ Rails.application.routes.draw do
 
   # 子供関連のモデルをネストする
   resources :children do
-    resources :heights, :weights, :pees
+    resources :heights, :weights, :pees, :temperatures
   end
 
   # トップページをホーム画面に設定
