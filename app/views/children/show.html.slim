@@ -13,6 +13,7 @@ table.table.table-hover
       th = t"dictionary.items.edit"
       th = t"dictionary.items.destroy"
       th = t"dictionary.items.height"
+      th = t"dictionary.items.weight"
 
   tbody 
       tr 
@@ -25,4 +26,5 @@ table.table.table-hover
                         data: { turbo_method: :delete, 
                         turbo_confirm: "#{@child.name}さんを削除してもよろしいですか?"}, class: "btn btn-danger"
         td = link_to t("heights.links.to_new_height"), new_child_height_path(@child)
+        td = link_to t("weights.links.to_new_weight"), new_child_weight_path(@child)
         td = link_to t("homes.links.to_record"), record_path
