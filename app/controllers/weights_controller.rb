@@ -7,8 +7,8 @@ class WeightsController < ApplicationController
 
   def create
     @child  = Child.find(params[:child_id])
-    @weight = Weight.new(weight.params)
-    if @weight.save(weight_params)
+    @weight = Weight.new(weight_params)
+    if @weight.save
       redirect_to child_weight_path(id: @weight.id), notice: "登録しました"
     else
       render :new, status: :unproccesable_entity
@@ -47,5 +47,4 @@ class WeightsController < ApplicationController
       params.require(:weight).permit(:weight).merge(child_id: params[:child_id])
     end
 
-  end
 end
