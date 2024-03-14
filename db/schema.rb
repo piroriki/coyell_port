@@ -41,7 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_14_193014) do
 
   create_table "temperatures", force: :cascade do |t|
     t.time "time", null: false
-    t.integer "temperature", null: false
+    t.float "temperature", null: false
     t.string "memo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
