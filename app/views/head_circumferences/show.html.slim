@@ -1,2 +1,14 @@
-h1 HeadCircumferences#show
-p Find me in app/views/head_circumferences/show.html.slim
+h2 = t".title"
+
+.mb-3 
+table.table.table-hover 
+  thead.thead-default 
+    tr 
+      th = HeadCircumference.human_attribute_name(:time)
+      th = HeadCircumference.human_attribute_name(:length)
+      th = HeadCircumference.human_attribute_name(:memo)
+  tbody 
+      tr 
+        td = @head_circumference.time.strftime("%H時%M分")
+        td = link_to t("head_circumferences.links.to_edit_head_circumference"), edit_child_head_circumference_path(id: @head_circumference.id), data: { turbo_method: :get }
+        td = link_to t("head_circumferences.links.destroy_head_circumference"), child_head_circumference_path, data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"
