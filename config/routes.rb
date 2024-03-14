@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  
   # 管理者用
   namespace :admin do
     devise_scope :user do
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
   # 子供関連のモデルをネストする
   resources :children do
-    resources :heights, :weights, :pees, :temperatures
+    resources :heights, :weights, :pees, :temperatures, :head_circumferences
   end
 
   # トップページをホーム画面に設定
