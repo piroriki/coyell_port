@@ -8,7 +8,7 @@ table.table.table-hover
       th = Pee.human_attribute_name(:memo)
   tbody 
       tr 
-        td = @pee.memo
+        td = @pee.time.strftime("%H時%M分")
         td = @pee.memo
         td = link_to t("pees.links.to_edit_pee"), edit_child_pee_path(id: @pee.id), data: { turbo_method: :get }
         td = link_to t("pees.links.destroy_pee"), child_pee_path,

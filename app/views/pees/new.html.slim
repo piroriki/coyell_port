@@ -14,7 +14,7 @@ h2 = t".title"
 
   .form-group 
     = f.label             :time
-    = f.datetime_select   :time, {}, autofocus: true, autocomplete: "time", placeholder: true, class: "form-control", id: "pee_time"
+    = f.time_select       :time, {}, autofocus: true, autocomplete: "time", placeholder: true, class: "form-control", id: "pee_time"
 
   .form-group 
     = f.label             :memo

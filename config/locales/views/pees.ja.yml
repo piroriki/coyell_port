@@ -6,3 +6,9 @@ ja:
       title: おしっこの編集
     show:
       title: おしっこの詳細
+
+    links:
+      to_new_pee:  登録
+      to_edit_pee: 編集
+      to_show_pee: 詳細
+      destroy_pee: 削除

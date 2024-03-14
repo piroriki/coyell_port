@@ -9,7 +9,7 @@ class PeesController < ApplicationController
     @child = Child.find(params[:child_id])
     @pee   = Pee.new(pee_params)
     if @pee.save
-      redirect_to child_pee_path, notice: "登録しました"
+      redirect_to child_pee_path(id: @pee.id), notice: "登録しました"
     else
       render :new, status: :unprocessable_entity
     end
