@@ -1,0 +1,13 @@
+ja:
+  temperatures:
+    new:
+      title:               体温の登録
+    edit:
+      title:               体温の編集
+    show:
+      title:               体温の詳細
+    links:
+      to_new_temperatu:    登録
+      to_edit_temperature: 編集
+      to_show_temperature: 詳細
+      destroy_temperature: 削除

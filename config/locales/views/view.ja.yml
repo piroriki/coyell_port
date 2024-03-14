@@ -16,6 +16,7 @@ ja:
       height:          身長
       weight:          体重
       pee:             おしっこ
+      temperature:     体温
   helpers:
     submit: # 共通ボタン表記
       create:          登録する
