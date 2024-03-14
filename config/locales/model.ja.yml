@@ -74,10 +74,14 @@ ja:
         password: 半角英数字8文字以上
         password_confirmation: 上記パスワードを再度入力
       child:
-        name: お子様のお名前
-        gender: お子様の性別
-        age: お子様の年齢
-        birthday: お子様のお誕生日
+        name: お名前
+        gender: 性別
+        age: 年齢
+        birthday: お誕生日
+      height:
+        height: 小数点第一位まで
+      weight:
+        weight: グラム単位
     account: 
       create:  保存する
     select: 
