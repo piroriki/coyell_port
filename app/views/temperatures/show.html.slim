@@ -1,2 +1,17 @@
-h1 Temperatures#show
-p Find me in app/views/temperatures/show.html.slim
+h2 = t".title"
+
+.mb-3 
+table.table.table-hover 
+  thead.thead-default 
+    tr 
+      th = Temperature.human_attribute_name(:time)
+      th = Temperature.human_attribute_name(:temperature)
+      th = Temperature.human_attribute_name(:memo)
+  tbody 
+      tr 
+        td = @temperature.time.strftime("%H時%M分")
+        td = "#{@temperature.temperature}度"
+        td = @temperature.memo
+        td = link_to t("temperatures.links.to_edit_temperature"), edit_child_temperature_path(id: @pee.id), data: { turbo_method: :get }
+        td = link_to t("temperatures.links.destroy_temperature"), child_temperature_path,
+             data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"
