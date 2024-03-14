@@ -1,2 +1,22 @@
-h1 Weights#edit
-p Find me in app/views/weights/edit.html.slim
+h2 = t".title"
+
+/ エラーメッセージが表示されるようにする
+- if @weight.errors.present?
+  ul#error_explanation 
+    - weight.error.full_messages.each do |message|
+      li = message 
+
+/.nav.justify-content-end 
+/= link_to t("children.links.to_children"), url: children_path, class: "nav-link"
+
+= form_with(model: [@child, @weight],
+  data: { turbo_method: :patch }, class: "nav-link", local: true) do |f|
+
+  .form-group 
+    = f.label          :weight
+    = f.number_field   :weight, autofocus: true, autocomplete: "weight", class: "form-control", id: "weight_weight"
+
+  .form-group 
+    = f.hidden_field   :child_id, value: @child.id
+
+  = f.submit(t"helpers.submit.update")
