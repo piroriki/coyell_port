@@ -1,0 +1,13 @@
+ja:
+  weights:
+    new:
+      title: 体重の登録
+    edit:
+      title: 体重の編集
+    show:
+      title: 体重の詳細
+    links:
+      to_new_weight:  登録
+      to_edit_weight: 編集
+      to_show_weight: 詳細
+      destroy_weight: 削除
