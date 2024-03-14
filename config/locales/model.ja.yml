@@ -90,9 +90,11 @@ ja:
         age:                   年齢
         birthday:              お誕生日
       height:
-        height:                小数点第一位まで
+        height:                50.1
       weight:
-        weight:                グラム単位
+        weight:                4.25
+      temperature:
+        temperature:           36.1
     account: 
       create:                  保存する
     select: 

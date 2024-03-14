@@ -18,7 +18,7 @@ h2 = t".title"
 
   .form-group 
     = f.label             :temperature
-    = f.number_field      :temperature, autofocus: true, autocoplete: "temperature",placeholder: true, class: "form-control", id: "temperature_temperature"
+    = f.number_field      :temperature, step: "0.1", autofocus: true, autocoplete: "temperature",placeholder: true, class: "form-control", id: "temperature_temperature"
 
   .form-group 
     = f.label             :memo
