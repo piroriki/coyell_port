@@ -4,10 +4,9 @@ h2 = t".title"
 table.table.table-hover 
   thead.thead-default 
     tr 
-      th = Height.human_attribute_name(:weight)
+      th = Weight.human_attribute_name(:weight)
   tbody 
       tr 
         td = @weight.weight
         td = link_to t("weights.links.to_edit_weight"), edit_child_weight_path(id: @weight.id), data: { turbo_method: :get }
         td = link_to t("weights.links.destroy_weight"), child_weight_path, data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"
-
