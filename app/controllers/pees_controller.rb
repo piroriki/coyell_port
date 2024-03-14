@@ -24,7 +24,7 @@ class PeesController < ApplicationController
     @child = Child.find(params[:child_id])
     @pee   = Pee.find(params[:id])
     if @pee.update(pee_params)
-      redirect_to child_pee_path, notice: "更新しました"
+      redirect_to child_pee_path(id: @pee.id), notice: "更新しました"
     else
       render :edit, status: :unprocessable_entity
     end

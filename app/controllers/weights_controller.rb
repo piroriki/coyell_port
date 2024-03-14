@@ -24,7 +24,7 @@ class WeightsController < ApplicationController
     @child  = Child.find(params[:child_id])
     @weight = Weight.find(params[:id])
     if @weight.update(weight_params)
-      redirect_to child_weight_path, notice: "更新しました"
+      redirect_to child_weight_path(id: @weight.id), notice: "更新しました"
     else
       render :edit, status: :unproccesable_entity
     end

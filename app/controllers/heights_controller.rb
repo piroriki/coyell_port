@@ -27,7 +27,7 @@ class HeightsController < ApplicationController
     @child = Child.find(params[:child_id])
     @height = Height.find(params[:id])
     if @height.update(height_params)
-      redirect_to child_height_path(@height), notice: "更新しました"
+      redirect_to child_height_path(id: @height.id), notice: "更新しました"
     else
       render :edit, status: :unproccesable_entity
     end
