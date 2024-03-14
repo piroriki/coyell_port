@@ -15,6 +15,7 @@ ja:
       destroy:         削除
       height:          身長
       weight:          体重
+      pee:             おしっこ
   helpers:
     submit: # 共通ボタン表記
       create:          登録する
