@@ -44,6 +44,6 @@ class HeadCircumferencesController < ApplicationController
   private
 
     def head_circumference_params
-      params.require(:head_circumference).permit(:time, :head_circumference, :memo).merge(child_id: params[:child_id])
+      params.require(:head_circumference).permit(:time, :length, :memo).merge(child_id: params[:child_id])
     end
 end
