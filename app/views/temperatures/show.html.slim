@@ -12,6 +12,6 @@ table.table.table-hover
         td = @temperature.time.strftime("%H時%M分")
         td = "#{@temperature.temperature}度"
         td = @temperature.memo
-        td = link_to t("temperatures.links.to_edit_temperature"), edit_child_temperature_path(id: @pee.id), data: { turbo_method: :get }
+        td = link_to t("temperatures.links.to_edit_temperature"), edit_child_temperature_path(id: @temperature.id), data: { turbo_method: :get }
         td = link_to t("temperatures.links.destroy_temperature"), child_temperature_path,
              data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"
