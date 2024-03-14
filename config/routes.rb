@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'temperatures/new'
+  get 'temperatures/edit'
+  get 'temperatures/show'
 
   # 管理者用
   namespace :admin do
