@@ -22,6 +22,7 @@ ja:
       meal:               ごはん
       milk:               ミルク
       right_breast_milk:  母乳(右)
+      left_breast_milk:   母乳(左)
   helpers:
     submit: # 共通ボタン表記
       create:             登録する
