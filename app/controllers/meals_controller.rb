@@ -3,6 +3,7 @@ class MealsController < ApplicationController
   def new
     @child = Child.find(params[:child_id])
     @meal  = Meal.new
+    @kinds_options = Meal.kinds_i18n.invert.map{|key,value|[key,value]}
   end
 
   def create
@@ -18,6 +19,7 @@ class MealsController < ApplicationController
   def edit
     @child = Child.find(params[:child_id])
     @meal  = Meal.find(params[:id])
+    @kinds_options = Meal.kinds_i18n.invert.map{|key,value|[key,value]}
   end
 
   def update
