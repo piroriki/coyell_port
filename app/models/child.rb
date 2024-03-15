@@ -4,7 +4,8 @@ class Child < ApplicationRecord
   belongs_to :user
 
   # 各種モデルとの関連づけ
-  has_many :heights
+  has_many :heights, :weights, :pees, :temperatures, :head_circumferences, :meals
+
 
   # 性別の分類をあらかじめセットしておく
   enum gender: { other: 0, male: 1, female: 2 }
