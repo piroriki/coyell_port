@@ -1,0 +1,2 @@
+class LeftBreastMilk < ApplicationRecord
+end
