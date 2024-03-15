@@ -1,2 +1,15 @@
-h1 Poops#show
-p Find me in app/views/poops/show.html.slim
+h2 = t".title"
+
+.mb-3 
+table.table.table-hover 
+  thead.thead-default 
+    tr 
+      th = Poop.human_attribute_name(:time)
+      th = Poop.human_attribute_name(:memo)
+  tbody 
+      tr 
+        td = @poop.time.strftime("%H時%M分")
+        td = @poop.memo
+        td = link_to t("poops.links.to_edit_poop"), edit_child_poop_path(id: @poop.id), data: { turbo_method: :get }
+        td = link_to t("poops.links.destroy_poop"), child_poop_path,
+             data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"
