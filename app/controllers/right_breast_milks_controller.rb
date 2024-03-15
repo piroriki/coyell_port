@@ -1,4 +1,5 @@
 class RightBreastMilksController < ApplicationController
+
   def new
     @child = Child.find(params[:child_id])
     @r_breast_milk = RightBreastMilk.new
@@ -33,6 +34,11 @@ class RightBreastMilksController < ApplicationController
     @r_breast_milk = RightBreastMilk.find(params[:id])
     @r_breast_milk.destroy
     redirect_to children_path, notice: "削除しました"
+  end
+
+  def show
+    @child = Child.find(params[:child_id])
+    @r_breast_milk = RightBreastMilk.find(params[:id])
   end
   
   private
