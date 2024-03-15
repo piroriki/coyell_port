@@ -19,6 +19,7 @@ table.table.table-hover
       th = t"dictionary.items.meal"
       th = t"dictionary.items.milk"
       th = t"dictionary.items.right_breast_milk"
+      th = t"dictionary.items.left_breast_milk"
       th = t"dictionary.items.pee"
       th = t"dictionary.items.poop"
 
@@ -40,6 +41,7 @@ table.table.table-hover
         td = link_to t("meals.links.to_new_meal"),                             new_child_meal_path(@child)
         td = link_to t("milks.links.to_new_milk"),                             new_child_milk_path(@child)
         td = link_to t("right_breast_milks.links.to_new_r_breast_milk"),       new_child_right_breast_milk_path(@child)
+        td = link_to t("left_breast_milks.links.to_new_l_breast_milk"),        new_child_left_breast_milk_path(@child)
         td = link_to t("pees.links.to_new_pee"),                               new_child_pee_path(@child)
         td = link_to t("poops.links.to_new_poop"),                             new_child_poop_path(@child)
         td = link_to t("homes.links.to_record"),                               record_path
