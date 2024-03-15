@@ -1,0 +1,15 @@
+h2 = t".title"
+
+.mb-3 
+table.table.table-hover 
+  thead.thead-default 
+    tr 
+      th = RightBreastMilk.human_attribute_name(:time)
+      th = RightBreastMilk.human_attribute_name(:memo)
+  tbody 
+      tr 
+        td = @r_breast_milk.time.strftime("%H時%M分")
+        td = @r_breast_milk.memo
+        td = link_to t("right_breast_milks.links.to_edit_r_breast_milk"), edit_child_right_breast_milk_path(id: @r_breast_milkmilk.id), data: { turbo_method: :get }
+        td = link_to t("right_breast_milks.links.destroy_r_breast_milk"), child_right_breast_milk_path,
+             data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"
