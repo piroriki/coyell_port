@@ -4,7 +4,12 @@ class Child < ApplicationRecord
   belongs_to :user
 
   # 各種モデルとの関連づけ
-  has_many :heights, :weights, :pees, :temperatures, :head_circumferences, :meals
+  has_many :heights
+  has_many :weights
+  has_many :pees
+  has_many :temperatures
+  has_many :head_circumferences
+  has_many :meals
 
 
   # 性別の分類をあらかじめセットしておく
