@@ -8,6 +8,7 @@ ja:
       weight:              体重
       pee:                 おしっこ
       temperature:         体温
+      head_circumference:  頭囲
     attributes: # 各種モデルの属性定義
       admin: # 管理者
         name:              管理者名
@@ -29,6 +30,8 @@ ja:
         weight:            体重
       temperature:
         temperature:       体温
+      head_circumference:
+        length:            長さ
   attributes: # 全モデルで共通する属性を定義
     id:                    ID
     email:                 メールアドレス

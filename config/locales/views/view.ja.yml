@@ -1,25 +1,26 @@
 ja:
   dictionary: # 全ファイル共通で使い回す翻訳情報はここに追記
     links:  #全ファイル共通のリンク
-      to_home:         ホーム
-      to_users_index:  ユーザー一覧
-      to_user_profile: プロフィール
-      to_edit_profile: プロフィール編集
-      to_user_signup:  ユーザー新規登録
-      to_signup:       ユーザー新規登録
-      to_login:        ログイン
-      logout:          ログアウト
-      guest_login:     ゲストログイン(閲覧用)
+      to_home:            ホーム
+      to_users_index:     ユーザー一覧
+      to_user_profile:    プロフィール
+      to_edit_profile:    プロフィール編集
+      to_user_signup:     ユーザー新規登録
+      to_signup:          ユーザー新規登録
+      to_login:           ログイン
+      logout:             ログアウト
+      guest_login:        ゲストログイン(閲覧用)
     items: # 共通項目名
-      edit:            編集
-      destroy:         削除
-      height:          身長
-      weight:          体重
-      pee:             おしっこ
-      temperature:     体温
+      edit:               編集
+      destroy:            削除
+      height:             身長
+      weight:             体重
+      pee:                おしっこ
+      temperature:        体温
+      head_circumference: 頭囲
   helpers:
     submit: # 共通ボタン表記
-      create:          登録する
-      update:          更新する
-      login:           ログインする
-      signup:          ユーザーを新規登録する
+      create:             登録する
+      update:             更新する
+      login:              ログインする
+      signup:             ユーザーを新規登録する

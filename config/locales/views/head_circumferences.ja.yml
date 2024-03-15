@@ -1,0 +1,13 @@
+ja:
+  head_circumferences:
+    new:
+      title:                      頭囲の登録
+    edit:
+      title:                      頭囲の編集
+    show:
+      title:                      頭囲の詳細
+    links:
+      to_new_head_circumference:  登録
+      to_edit_head_circumference: 編集
+      to_show_head_circumference: 詳細
+      destroy_head_circumference: 削除
