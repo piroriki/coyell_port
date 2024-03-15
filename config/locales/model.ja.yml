@@ -98,6 +98,8 @@ ja:
         weight:                4.25
       temperature:
         temperature:           36.1
+      head_circumference:
+        length:                45.0
     account: 
       create:                  保存する
     select: 
