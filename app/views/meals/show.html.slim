@@ -10,7 +10,7 @@ table.table.table-hover
   tbody 
       tr 
         td = @meal.time.strftime("%H時%M分")
-        td = @meal.gender_i18n
+        td = @meal.kinds_i18n
         td = @meal.memo
         td = link_to t("meals.links.to_edit_meal"), edit_child_meal_path(id: @meal.id), data: { turbo_method: :get }
         td = link_to t("meals.links.destroy_meal"), child_meal_path,
