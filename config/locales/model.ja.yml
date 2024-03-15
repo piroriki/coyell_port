@@ -12,6 +12,7 @@ ja:
       head_circumference:  頭囲
       meal:                ごはん
       milk:                ミルク
+      right_breast_milk:   母乳(右)
     attributes: # 各種モデルの属性定義
       admin: # 管理者
         name:              管理者名
