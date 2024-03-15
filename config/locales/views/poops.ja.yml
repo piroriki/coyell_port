@@ -1,0 +1,13 @@
+ja:
+  poops:
+    new:
+      title:        うんちの登録
+    edit:
+      title:        うんちの編集
+    show:
+      title:        うんちの詳細
+    links:
+      to_new_poop:  登録
+      to_edit_poop: 編集
+      to_show_poop: 詳細
+      destroy_poop: 削除
