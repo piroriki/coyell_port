@@ -1,2 +1,17 @@
-h1 Meals#show
-p Find me in app/views/meals/show.html.slim
+h2 = t".title"
+
+.mb-3 
+table.table.table-hover 
+  thead.thead-default 
+    tr 
+      th = Meal.human_attribute_name(:time)
+      th = Meal.human_attribute_name(:kinds)
+      th = Meal.human_attribute_name(:memo)
+  tbody 
+      tr 
+        td = @meal.time.strftime("%H時%M分")
+        td = @meal.gender_i18n
+        td = @meal.memo
+        td = link_to t("meals.links.to_edit_meal"), edit_child_meal_path(id: @meal.id), data: { turbo_method: :get }
+        td = link_to t("meals.links.destroy_meal"), child_meal_path,
+             data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"
