@@ -17,12 +17,12 @@ class PoopsController < ApplicationController
 
   def edit
     @child = Child.find(params[:child_id])
-    @poop  = Poop.fuind(params[:id])
+    @poop  = Poop.find(params[:id])
   end
 
   def update
     @child = Child.find(params[:child_id])
-    @poop  = Poop.fuind(params[:id])
+    @poop  = Poop.find(params[:id])
     if @poop.update(poop_params)
       redirect_to child_poop_path, notice: "更新しました"
     else
@@ -31,14 +31,14 @@ class PoopsController < ApplicationController
   end
 
   def destroy
-    @poop  = Poop.fuind(params[:id])
+    @poop  = Poop.find(params[:id])
     @poop.destroy
     redirect_to children_path, notice: "削除しました"
   end
 
   def show
     @child = Child.find(params[:child_id])
-    @poop  = Poop.fuind(params[:id])
+    @poop  = Poop.find(params[:id])
   end
 
   private
