@@ -18,6 +18,7 @@ ja:
       pee:                おしっこ
       temperature:        体温
       head_circumference: 頭囲
+      meal:               ごはん
   helpers:
     submit: # 共通ボタン表記
       create:             登録する

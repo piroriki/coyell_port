@@ -1,0 +1,13 @@
+ja:
+  meals:
+    new: 
+      title:        ごはんの登録
+    edit:
+      title:        ごはんの編集
+    show:
+      title:        ごはんの詳細
+    links:
+      to_new_meal:  登録
+      to_edit_meal: 編集
+      to_show_meal: 詳細
+      destroy_meal: 削除

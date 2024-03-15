@@ -9,6 +9,7 @@ ja:
       pee:                 おしっこ
       temperature:         体温
       head_circumference:  頭囲
+      meal:                ごはん
     attributes: # 各種モデルの属性定義
       admin: # 管理者
         name:              管理者名
@@ -32,6 +33,8 @@ ja:
         temperature:       体温
       head_circumference:
         length:            長さ
+      meal:
+        kinds:             種類
   attributes: # 全モデルで共通する属性を定義
     id:                    ID
     email:                 メールアドレス
@@ -47,6 +50,11 @@ ja:
         other:             その他
         male:              男の子
         female:            女の子
+    meal:
+      kinds:
+        meal:              ごはん
+        snack:             おやつ
+        drink:             飲み物
   children: # 子供用フラッシュメッセージ共通化
     notice: 
       create:              登録しました
