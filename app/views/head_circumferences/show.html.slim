@@ -10,5 +10,7 @@ table.table.table-hover
   tbody 
       tr 
         td = @head_circumference.time.strftime("%H時%M分")
+        td = "#{@head_circumference.length}センチ"
+        td = @head_circumference.memo
         td = link_to t("head_circumferences.links.to_edit_head_circumference"), edit_child_head_circumference_path(id: @head_circumference.id), data: { turbo_method: :get }
         td = link_to t("head_circumferences.links.destroy_head_circumference"), child_head_circumference_path, data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"
