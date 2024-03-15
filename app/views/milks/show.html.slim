@@ -1,2 +1,17 @@
-h1 Milks#show
-p Find me in app/views/milks/show.html.slim
+h2 = t".title"
+
+.mb-3 
+table.table.table-hover 
+  thead.thead-default 
+    tr 
+      th = Milk.human_attribute_name(:time)
+      th = Milk.human_attribute_name(:amount)
+      th = Milk.human_attribute_name(:memo)
+  tbody 
+      tr 
+        td = @milk.time.strftime("%H時%M分")
+        td = "#{@milk.amount}ミリ"
+        td = @milk.memo
+        td = link_to t("milks.links.to_edit_milk"), edit_child_milk_path(id: @milk.id), data: { turbo_method: :get }
+        td = link_to t("milks.links.destroy_milk"), child_milk_path,
+             data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"
