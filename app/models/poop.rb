@@ -1,0 +1,2 @@
+class Poop < ApplicationRecord
+end
