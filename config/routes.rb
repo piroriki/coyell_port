@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
   # 子供関連のモデルをネストする
   resources :children do
-    resources :heights, :weights, :pees, :temperatures, :head_circumferences, :meals
+    resources :heights, :weights, :pees, :temperatures, :head_circumferences, :meals, :poops
   end
 
   # トップページをホーム画面に設定
