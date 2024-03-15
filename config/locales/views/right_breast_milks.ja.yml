@@ -7,7 +7,7 @@ ja:
     show:
       title:                     母乳(右)の詳細
     links:
-      to_new_right_breast_milk:  登録
-      to_edit_right_breast_milk: 編集
-      to_show_right_breast_milk: 詳細
-      destroy_right_breast_milk: 削除
+      to_new_r_breast_milk:      登録
+      to_edit_r_breast_milk:     編集
+      to_show_r_breast_milk:     詳細
+      destroy_r_breast_milk:     削除
