@@ -34,7 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_14_211149) do
   end
 
   create_table "heights", force: :cascade do |t|
-    t.integer "height", null: false
+    t.float "height", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "child_id"
@@ -76,7 +76,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_14_211149) do
   end
 
   create_table "weights", force: :cascade do |t|
-    t.integer "weight", null: false
+    t.float "weight", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "child_id"
