@@ -112,6 +112,8 @@ ja:
         temperature:           36.1
       head_circumference:
         length:                45.0
+      milk:
+        amount:                50
     account: 
       create:                  保存する
     select: 
