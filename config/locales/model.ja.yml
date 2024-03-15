@@ -7,10 +7,11 @@ ja:
       height:              身長
       weight:              体重
       pee:                 おしっこ
+      poop:                うんち
       temperature:         体温
       head_circumference:  頭囲
       meal:                ごはん
-      poop:                うんち
+      milk:                ミルク
     attributes: # 各種モデルの属性定義
       admin: # 管理者
         name:              管理者名
@@ -36,6 +37,8 @@ ja:
         length:            長さ
       meal:
         kinds:             種類
+      milk:
+        amount:            量
   attributes: # 全モデルで共通する属性を定義
     id:                    ID
     email:                 メールアドレス

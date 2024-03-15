@@ -16,10 +16,11 @@ ja:
       height:             身長
       weight:             体重
       pee:                おしっこ
+      poop:               うんち
       temperature:        体温
       head_circumference: 頭囲
       meal:               ごはん
-      poop:               うんち
+      milk:               ミルク
   helpers:
     submit: # 共通ボタン表記
       create:             登録する

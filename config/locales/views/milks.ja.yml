@@ -1,0 +1,13 @@
+ja:
+  milks:
+    new:
+      title:        ミルクの登録
+    edit:
+      title:        ミルクの編集
+    show:
+      title:        ミルクの詳細
+    links:
+      to_new_milk:  登録
+      to_edit_milk: 編集
+      to_show_milk: 詳細
+      destroy_milk: 削除
