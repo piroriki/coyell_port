@@ -17,8 +17,8 @@ h2 = t".title"
     = f.time_select       :time, {}, autofocus: true, autocomplete: "time", placeholder: true, class: "form-control", id: "milk_time"
 
   .form-group 
-    = f.label        :amount 
-    = f.select       :amount, autofocus: true, autocompelete: "amount", placeholder: true, class: "form-control", id: "milk_amount"
+    = f.label             :amount 
+    = f.number_field      :amount, autofocus: true, autocompelete: "amount", placeholder: true, class: "form-control", id: "milk_amount"
   
   .form-group 
     = f.label             :memo
