@@ -8,7 +8,7 @@ class User < ApplicationRecord
   enum role: { non_admin: 0, admin: 1 }
 
   # 子供との関連づけ
-  has_many :children
+  has_many :children, dependent: :destroy
 
   # ゲストログイン機能のメソッドをモデルで設定することで、
   # コントローラ内のコードが見やすくなる
