@@ -8,6 +8,6 @@ ja:
       title:                  母乳(左)の詳細
     links:
       to_new_l_breast_milk:   登録
-      to_edit__l_breast_milk: 編集
+      to_edit_l_breast_milk:  編集
       to_show_l_breast_milk:  詳細
       destroy_l_breast_milk:  削除
