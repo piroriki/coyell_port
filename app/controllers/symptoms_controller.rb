@@ -3,6 +3,7 @@ class SymptomsController < ApplicationController
   def new
     @child   = Child.find(params[:id])
     @symptom = Symptom.new
+    @kinds_options = Symptom.kinds_i18n.invert.map{|key,value|[key,value]}
   end
 
   def create
@@ -18,6 +19,7 @@ class SymptomsController < ApplicationController
   def edit
     @child   = Child.find(params[:id])
     @symptom = Symptom.find(params[:id])
+    @kinds_options = Symptom.kinds_i18n.invert.map{|key,value|[key,value]}
   end
 
   def update
