@@ -1,2 +1,17 @@
-h1 Symptoms#show
-p Find me in app/views/symptoms/show.html.slim
+h2 = t".title"
+
+.mb-3 
+table.table.table-hover 
+  thead.thead-default 
+    tr 
+      th = Symptom.human_attribute_name(:time)
+      th = Symptom.human_attribute_name(:kinds)
+      th = Symptom.human_attribute_name(:memo)
+  tbody 
+      tr 
+        td = @symptom.time.strftime("%H時%M分")
+        td = @symptom.kinds_i18n
+        td = @symptom.memo
+        td = link_to t("symptoms.links.to_edit_symptom"), edit_child_symptom_path(id: @symptom.id), data: { turbo_method: :get }
+        td = link_to t("symptoms.links.destroy_symptom"), child_symptom_path,
+             data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"
