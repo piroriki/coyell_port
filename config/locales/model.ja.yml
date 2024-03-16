@@ -47,7 +47,7 @@ ja:
     updated_at:            更新日
     time:                  時間
     memo:                  メモ
-    other:                 その他
+    kinds:                 種類
   enums: # enum用
     child:
       gender:
@@ -67,6 +67,7 @@ ja:
         vomit:             嘔吐
         rash:              発疹
         injury:            怪我
+        other:             その他
   children: # 子供用フラッシュメッセージ共通化
     notice: 
       create:              登録しました
