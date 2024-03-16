@@ -14,6 +14,7 @@ class Child < ApplicationRecord
   has_many :milks
   has_many :right_breast_milks
   has_many :left_breast_milks
+  has_many :symptoms
 
   # 性別の分類をあらかじめセットしておく
   enum gender: { other: 0, male: 1, female: 2 }
