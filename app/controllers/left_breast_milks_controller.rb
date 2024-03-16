@@ -31,7 +31,7 @@ class LeftBreastMilksController < ApplicationController
   end
 
   def destroy
-    @l_breast_milk = LeftBreastMilk.find(params[:child_id])
+    @l_breast_milk = LeftBreastMilk.find(params[:id])
     @l_breast_milk.destroy
     redirect_to children_path, notice: "削除しました"
   end
