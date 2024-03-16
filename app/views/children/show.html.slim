@@ -22,6 +22,7 @@ table.table.table-hover
       th = t"dictionary.items.left_breast_milk"
       th = t"dictionary.items.pee"
       th = t"dictionary.items.poop"
+      th = t"dictionary.items.symptom"
 
   tbody 
       tr 
@@ -44,4 +45,5 @@ table.table.table-hover
         td = link_to t("left_breast_milks.links.to_new_l_breast_milk"),        new_child_left_breast_milk_path(@child)
         td = link_to t("pees.links.to_new_pee"),                               new_child_pee_path(@child)
         td = link_to t("poops.links.to_new_poop"),                             new_child_poop_path(@child)
+        td = link_to t("symptoms.links.to_new_symptom"),                       new_child_symptom_path(@child)
         td = link_to t("homes.links.to_record"),                               record_path
