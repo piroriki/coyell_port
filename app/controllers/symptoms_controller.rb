@@ -10,7 +10,7 @@ class SymptomsController < ApplicationController
     @child   = Child.find(params[:child_id])
     @symptom = Symptom.new(symptom_params)
     if @symptom.save
-      redirect_to child_symptom_path, notice: "登録しました"
+      redirect_to child_symptom_path(id: @symptom.id), notice: "登録しました"
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,7 +26,7 @@ class SymptomsController < ApplicationController
     @child   = Child.find(params[:child_id])
     @symptom = Symptom.find(params[:id])
     if @symptom.update(symptom_params)
-      redirect_to child_symptom_path, notice: "更新しました"
+      redirect_to child_symptom_path(id: @symptom.id), notice: "更新しました"
     else
       render :edit, status: :unprocessable_entity
     end
