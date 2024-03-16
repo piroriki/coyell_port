@@ -1,0 +1,13 @@
+ja:
+  symptoms:
+    new:
+      title:            症状の登録
+    edit:
+      title:            症状の編集
+    show:
+      title:            症状の詳細
+    links:
+      to_new_symptom:   登録
+      to_edit_symptom:  編集
+      to_show_symptom:  詳細
+      destroy_symptom:  削除

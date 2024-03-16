@@ -14,6 +14,7 @@ ja:
       milk:                ミルク
       right_breast_milk:   母乳(右)
       left_breast_milk:    母乳(左)
+      symptom:             症状
     attributes: # 各種モデルの属性定義
       admin: # 管理者
         name:              管理者名
@@ -23,10 +24,6 @@ ja:
       child: # 子供
         name:              お名前
         gender:            性別
-        genders:
-          male:            男の子
-          female:          女の子
-          other:           その他
         age:               年齢
         birthday:          誕生日
       height:
@@ -50,6 +47,7 @@ ja:
     updated_at:            更新日
     time:                  時間
     memo:                  メモ
+    other:                 その他
   enums: # enum用
     child:
       gender:
@@ -61,6 +59,14 @@ ja:
         meal:              ごはん
         snack:             おやつ
         drink:             飲み物
+    symptom:
+      kinds:
+        fever:             発熱
+        snot:              鼻水
+        cough:             咳
+        vomit:             嘔吐
+        rash:              発疹
+        injury:            怪我
   children: # 子供用フラッシュメッセージ共通化
     notice: 
       create:              登録しました
