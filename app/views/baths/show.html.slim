@@ -1,2 +1,15 @@
-h1 Baths#show
-p Find me in app/views/baths/show.html.slim
+h2 = t".title"
+
+.mb-3 
+table.table.table-hover 
+  thead.thead-default 
+    tr 
+      th = Bath.human_attribute_name(:time)
+      th = Bath.human_attribute_name(:memo)
+  tbody 
+      tr 
+        td = @bath.time.strftime("%H時%M分")
+        td = @bath.memo
+        td = link_to t("baths.links.to_edit_bath"), edit_child_bath_path(id: @bath.id), data: { turbo_method: :get }
+        td = link_to t("baths.links.destroy_bath"), child_bath_path,
+             data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"
