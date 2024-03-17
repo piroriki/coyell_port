@@ -9,7 +9,7 @@ class ExecretionsController < ApplicationController
     @child      = Child.find(params[:child_id])
     @execretion = Execretion.new(execretion_params)
     if @execretion.save
-      redirect_to child_execretion_path, notice: "登録しました"
+      redirect_to child_execretion_path(id: @execretion.id), notice: "登録しました"
     else
       render :new, status: :unprocessable_entity
     end
