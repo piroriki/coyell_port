@@ -17,6 +17,7 @@ ja:
       left_breast_milk:    母乳(左)
       symptom:             症状
       bath:                お風呂
+      diary:               日記
     attributes: # 各種モデルの属性定義
       admin: # 管理者
         name:              管理者名
@@ -40,6 +41,8 @@ ja:
         kinds:             種類
       milk:
         amount:            量
+      diary:
+        content:           内容
   attributes: # 全モデルで共通する属性を定義
     id:                    ID
     email:                 メールアドレス

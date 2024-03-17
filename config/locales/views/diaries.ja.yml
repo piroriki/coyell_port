@@ -1,0 +1,13 @@
+ja: 
+  diaries:
+    new:
+      title:         日記の登録
+    edit:
+      title:         日記の編集
+    show:
+      title:         日記の詳細
+    links:
+      to_new_diary:  登録
+      to_edit_diary: 編集
+      to_show_diary: 詳細
+      destroy_diary: 削除
