@@ -24,6 +24,7 @@ ja:
       right_breast_milk:  母乳(右)
       left_breast_milk:   母乳(左)
       symptom:            症状
+      bath:               お風呂
   helpers:
     submit: # 共通ボタン表記
       create:             登録する

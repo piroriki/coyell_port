@@ -1,0 +1,13 @@
+ja:
+  baths:
+    new:
+      title:        お風呂の登録
+    edit:
+      title:        お風呂の編集
+    show:
+      title:        お風呂の詳細
+    links:
+      to_new_bath:  登録
+      to_edit_bath: 編集
+      to_show_bath: 詳細
+      destroy_bath: 削除

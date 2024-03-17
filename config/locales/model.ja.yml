@@ -15,6 +15,7 @@ ja:
       right_breast_milk:   母乳(右)
       left_breast_milk:    母乳(左)
       symptom:             症状
+      bath:                お風呂
     attributes: # 各種モデルの属性定義
       admin: # 管理者
         name:              管理者名
