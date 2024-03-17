@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     delete "logout",      to: "users/sessions#destroy"
     # プロフィール編集用
     #get    "edit_user",   to: "users/registrations#edit"
-    #patch  "edit_user",   to: "users/registrations#update"
+    patch  "users/edit",  to: "users/registrations#update"
     #put    "edit_user",   to: "users/registrations#update"
     # ゲストログイン用
     post   "guest_login", to: "users/sessions#guest_login"

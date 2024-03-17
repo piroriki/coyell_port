@@ -1,14 +1,19 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  attr_accessor :current_password
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
   # enum で管理者権限の設定
   enum role: { non_admin: 0, admin: 1 }
 
   # 子供との関連づけ
   has_many :children, dependent: :destroy
+
+  # 各種バリデーション
+  # create時点のみバリデーションが動作するように追加設定
+  validates :password, presence: true, on: :create
 
   # ゲストログイン機能のメソッドをモデルで設定することで、
   # コントローラ内のコードが見やすくなる

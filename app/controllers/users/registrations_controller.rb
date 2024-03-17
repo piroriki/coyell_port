@@ -1,6 +1,24 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+
+  private
+    
+    # ユーザー新規登録後、ホーム画面に遷移
+    def after_sign_up_path_for(resource)
+      root_path
+    end
+  
+    # ユーザー情報更新後、プロフィール画面に遷移
+    def after_update_path_for(resource)
+      user_profile_path(id: current_user.id)
+    end
+  
+    # パスワードなしでプロフィール編集できるようにする
+    def update_resource(resource, params)
+      resource.update_without_password(params)
+    end
+
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
   
@@ -16,11 +34,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
   # def edit
-  #   super
-  # end
-
-  # PUT /resource
-  # def update
   #   super
   # end
 
@@ -49,23 +62,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def configure_account_update_params
   #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
   # end
-
-  private
-    
-    # ユーザー新規登録後、ホーム画面に遷移
-    def after_sign_up_path_for(resource)
-      root_path
-    end
-
-    # ユーザー情報更新後、プロフィール画面に遷移
-    def after_update_path_for(resource)
-      user_profile_path(id: current_user.id)
-    end
-
-    # パスワードなしでプロフィール編集できるようにする
-    def update_resource(resource, params)
-      resource.update_without_password(params)
-    end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)

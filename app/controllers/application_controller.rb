@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
-
+  
     def configure_permitted_parameters
       # 管理者用カラムの許可を追加
       # ログイン用

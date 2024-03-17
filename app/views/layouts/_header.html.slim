@@ -4,7 +4,7 @@
     a(class = "navbar-bland", href = root_path)Coyell
     - if user_signed_in?
       / ログイン済みユーザーの場合
-      li = link_to t("dictionary.links.to_user_profile"), edit_user_registration_path
+      li = link_to t("dictionary.links.to_user_profile"), edit_user_registration_path(id: current_user.id)
       li = link_to t("dictionary.links.logout"),          logout_path, data: { "turbo-method": :delete }
     - else
       / ログインしていないユーザーの場合
