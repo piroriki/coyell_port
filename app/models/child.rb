@@ -15,6 +15,7 @@ class Child < ApplicationRecord
   has_many :right_breast_milks,  dependent: :destroy
   has_many :left_breast_milks,   dependent: :destroy
   has_many :symptoms,            dependent: :destroy
+  has_many :baths,               dependent: :destroy
 
   # 性別の分類をあらかじめセットしておく
   enum gender: { other: 0, male: 1, female: 2 }
