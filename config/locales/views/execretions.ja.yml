@@ -1,0 +1,13 @@
+ja:
+  execretions:
+    new:
+      title:              うんちおしっこの登録
+    edit:
+      title:              うんちおしっこの編集
+    show:
+      title:              うんちおしっこの詳細
+    links:
+      to_new_execretion:   登録
+      to_edit_execretion:  編集
+      to_show_execretion:  詳細
+      destroy_execretion:  削除

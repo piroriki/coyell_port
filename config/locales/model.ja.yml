@@ -8,6 +8,7 @@ ja:
       weight:              体重
       pee:                 おしっこ
       poop:                うんち
+      execretion:          うんちおしっこ
       temperature:         体温
       head_circumference:  頭囲
       meal:                ごはん
