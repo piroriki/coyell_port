@@ -1,0 +1,2 @@
+class PostDiaryTag < ApplicationRecord
+end
