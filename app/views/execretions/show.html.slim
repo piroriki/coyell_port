@@ -1,2 +1,15 @@
-h1 Execretions#show
-p Find me in app/views/execretions/show.html.slim
+h2 = t".title"
+
+.mb-3 
+table.table.table-hover 
+  thead.thead-default 
+    tr 
+      th = Execretion.human_attribute_name(:time)
+      th = Execretion.human_attribute_name(:memo)
+  tbody 
+      tr 
+        td = @execretion.time.strftime("%H時%M分")
+        td = @execretion.memo
+        td = link_to t("execretions.links.to_edit_execretion"), edit_child_execretion_path(id: @execretion.id), data: { turbo_method: :get }
+        td = link_to t("execretions.links.destroy_execretion"), child_execretion_path,
+             data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"
