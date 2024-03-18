@@ -40,6 +40,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_18_042510) do
     t.string "title"
   end
 
+  create_table "diary_tag_relations", force: :cascade do |t|
+    t.bigint "diary_id", null: false
+    t.bigint "diary_tag_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["diary_id"], name: "index_diary_tag_relations_on_diary_id"
+    t.index ["diary_tag_id"], name: "index_diary_tag_relations_on_diary_tag_id"
+  end
+
   create_table "diary_tags", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -113,15 +122,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_18_042510) do
     t.integer "child_id"
   end
 
-  create_table "post_diary_tags", force: :cascade do |t|
-    t.bigint "diary_id", null: false
-    t.bigint "diary_tag_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["diary_id"], name: "index_post_diary_tags_on_diary_id"
-    t.index ["diary_tag_id"], name: "index_post_diary_tags_on_diary_tag_id"
-  end
-
   create_table "right_breast_milks", force: :cascade do |t|
     t.time "time", null: false
     t.string "memo"
@@ -173,6 +173,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_18_042510) do
     t.integer "child_id"
   end
 
-  add_foreign_key "post_diary_tags", "diaries"
-  add_foreign_key "post_diary_tags", "diary_tags"
+  add_foreign_key "diary_tag_relations", "diaries"
+  add_foreign_key "diary_tag_relations", "diary_tags"
 end

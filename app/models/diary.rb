@@ -7,8 +7,8 @@ class Diary < ApplicationRecord
   belongs_to :child
 
   # diary_tagモデルとの関連づけを、リレーションを介して行う
-  has_many :post_diary_tags, dependent: :destroy
-  has_many :diary_tags, through: :post_diary_tags
+  has_many :diary_tag_relations, dependent: :destroy
+  has_many :diary_tags, through: :diary_tag_relations
 
   # バリデーション
   validates :content, presence: true, length: { maximum: 5000 }
