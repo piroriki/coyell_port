@@ -25,6 +25,7 @@ table.table.table-hover
       th = t"dictionary.items.poop"
       th = t"dictionary.items.execretion"
       th = t"dictionary.items.symptom"
+      th = t"dictionary.items.diary"
 
   tbody 
       tr 
@@ -50,4 +51,5 @@ table.table.table-hover
         td = link_to t("poops.links.to_new_poop"),                             new_child_poop_path(@child)
         td = link_to t("execretions.links.to_new_execretion"),                             new_child_execretion_path(@child)
         td = link_to t("symptoms.links.to_new_symptom"),                       new_child_symptom_path(@child)
+        td = link_to t("diaries.links.to_new_diary"),                          new_child_diary_path(@child)
         td = link_to t("homes.links.to_record"),                               record_path
