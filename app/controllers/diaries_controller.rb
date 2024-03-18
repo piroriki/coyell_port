@@ -11,7 +11,7 @@ class DiariesController < ApplicationController
     tag_list  = params[:diary][:tag_id].split(",")
     if @diary.save
       # @diaryにsave_diary_tagsを渡し、引数としてタグも同時に保存させる
-      @diary.save_tags(tag_list)
+      @diary.save_tags(tags)
       redirect_to diaries_path, notice: "投稿しました"
     else
       render :new
@@ -30,7 +30,7 @@ class DiariesController < ApplicationController
     # :diaryで預かったパラメータにアクセスし、:tag_idを取得する
     tag_list  = params[:diary][:tag_id].split(",")
     if @diary.update(diary_params)
-      @diary.update_tags(tag_list)
+      @diary.update_tags(tags)
       redirect_to diaries_path, success: t("diaries.edit.edit_success")
     else
       render :edit
@@ -46,6 +46,8 @@ class DiariesController < ApplicationController
   def show
     @child = Child.find(params[:child_id])
     @diary = Diary.find(params[:id])
+    # タグ用
+    @tags  = @diary.tags.pluck(:name).join(",")
   end
 
   private
