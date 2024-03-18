@@ -45,7 +45,7 @@ class Diary < ApplicationRecord
       # 既存のタグは削除する
       old_tags.each do |old_tag|
         tag = self.tags.find_by(name: old_tag)
-        self.tags.delete(tag) id tag_present?
+        self.tags.delete(tag) if tag_present?
       end
 
       new_tags.each do |new_tag|
