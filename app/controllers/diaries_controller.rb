@@ -52,7 +52,7 @@ class DiariesController < ApplicationController
 
   private
 
-    def diaries_path
+    def diary_params
       params.require(:diary).permit(:title, :content, :photo)
     end
 end
