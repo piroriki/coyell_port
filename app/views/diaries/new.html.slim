@@ -1,2 +1,31 @@
-h1 Diaries#new
-p Find me in app/views/diaries/new.html.slim
+h2 = t".title"
+
+/ エラーメッセージが表示されるようにする
+- if @diary.errors.present?
+  ul#error_explanation 
+    - diary.error.full_messages.each do |message|
+      li = message 
+
+/.nav.justify-content-end 
+/= link_to t("children.links.to_children"), url: children_path, class: "nav-link"
+
+= form_with(model: [@child, @diary],
+  data: { turbo_method: :post }, class: "nav-link", local: true) do |f|
+
+  .form-group 
+    = f.label          :title
+    = f.text_field     :title, autofocus: true, autocomplete: "title", placeholder: true, class: "form-control", id: "diary_title"
+
+  .form-group 
+    = f.label          :content
+    = f.text_area      :content, autofocus: true, autocomplete: "content", placeholder: true, class: "form-control", id: "diary-content"
+  
+  / 画像はfile_field指定
+  .form-group 
+    = f.label          :photo
+    = f.file_field     :photo, class: "form-control", id: "diary_photo"
+
+  .form-group 
+    = f.hidden_field   :child_id, value: @child.id
+
+  = f.submit(t"helpers.submit.create")

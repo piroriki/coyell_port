@@ -1,2 +1,18 @@
-h1 Diaries#show
-p Find me in app/views/diaries/show.html.slim
+h2 = t".title"
+
+.mb-3 
+table.table.table-hover 
+  thead.thead-default 
+    tr 
+      th = Diary.human_attribute_name(:title)
+      th = Diary.human_attribute_name(:content)
+      th = Diary.human_attribute_name(:photo)
+  tbody 
+      tr 
+        td = @height.title
+        td = @diary.content
+        - if @diary.photo?
+          / photoがあれば、@diaryから画像ファイルのURLを取得して表示する
+          td = image_tag @diary.photo.url 
+        td = link_to t("diaries.links.to_edit_diary"), edit_child_diary_path(id: @diary.id), data: { turbo_method: :get }
+        td = link_to t("diaries.links.destroy_diary"), child_diary_path, data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"
