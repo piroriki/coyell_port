@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'diaries/new'
+  get 'diaries/edit'
+  get 'diaries/show'
 
   # 管理者用
   namespace :admin do
