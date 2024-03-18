@@ -42,7 +42,9 @@ ja:
       milk:
         amount:            量
       diary:
-        content:           内容
+        title:             タイトル
+        content:           本文
+        photo:             画像
   attributes: # 全モデルで共通する属性を定義
     id:                    ID
     email:                 メールアドレス
