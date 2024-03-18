@@ -21,6 +21,9 @@ gem "rails-i18n"
 # enumの日本語化
 gem "enum_help"
 
+# 画像添付用
+gem "carrierwave", "~> 2.0"
+
 # デバッグ用
 gem "pry-rails"
 
