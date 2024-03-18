@@ -1,5 +1,7 @@
 ja: 
   diaries:
+    index:
+      title:           日記の一覧
     new:
       title:           日記の投稿
     edit:
