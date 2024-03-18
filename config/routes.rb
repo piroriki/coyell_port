@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'diaries/new'
-  get 'diaries/edit'
-  get 'diaries/show'
 
   # 管理者用
   namespace :admin do
@@ -37,7 +34,7 @@ Rails.application.routes.draw do
 
   # 子供関連のモデルをネストする
   resources :children do
-    resources :heights, :weights, :pees, :temperatures, :head_circumferences, :meals, :poops, :milks, :right_breast_milks, :left_breast_milks, :symptoms, :baths, :execretions
+    resources :heights, :weights, :pees, :temperatures, :head_circumferences, :meals, :poops, :milks, :right_breast_milks, :left_breast_milks, :symptoms, :baths, :execretions, :diaries
   end
 
   # トップページをホーム画面に設定
