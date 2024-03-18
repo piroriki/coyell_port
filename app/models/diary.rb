@@ -1,4 +1,7 @@
 class Diary < ApplicationRecord
+
+  # PhotoUploaderクラスとphotoカラムを紐づける
+  mount_uploader :photo, PhotoUploader
   
   # childモデルとの関連づけ
   belongs_to :child
