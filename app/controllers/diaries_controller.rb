@@ -8,12 +8,17 @@ class DiariesController < ApplicationController
   def create
     @child    = Child.find(params[:child_id])
     @diary    = Diary.new(diary_params)
-    tag_list  = params[:diary][:tag_id].split(",")
+    tag_names  = params[:diary][:tag_names]
     if @diary.save
-      # @diaryにsave_diary_tagsを渡し、引数としてタグも同時に保存させる
-      @diary.save_tags(tags)
-      redirect_to diaries_path, notice: "投稿しました"
+      # tag_namesにタグがあれば、一つずつに分割する
+      if tag_names.present?
+        tags = tag_names.split("\n").map(&:strip).uniq
+        create_or_update_diary_tags(@diary, tags)
+      end
+      flash[:success] = t("dictionary.messages.diary.created")
+      redirect_to diaries_path
     else
+      flash[:danger]  = t("dictionary.messages.diary.not_created")
       render :new
     end
   end
@@ -21,18 +26,22 @@ class DiariesController < ApplicationController
   def edit
     @child    = Child.find(params[:child_id])
     @diary    = Diary.find(params[:id])
-    @tag_list = @diary.tag_list.pluck(:name).join(",")
   end
 
   def update
     @child    = Child.find(params[:child_id])
     @diary    = Diary.find(params[:id])
     # :diaryで預かったパラメータにアクセスし、:tag_idを取得する
-    tag_list  = params[:diary][:tag_id].split(",")
+    tag_names  = params[:diary][:tag_names]
     if @diary.update(diary_params)
-      @diary.update_tags(tags)
-      redirect_to diaries_path, success: t("diaries.edit.edit_success")
+      if tag_names.present?
+        tags = params[:diary][:tag_names].split("\n").map(&:strip).uniq
+        create_or_update_diary_tags(@diary, tags)
+      end
+      flash[:success] = t("dictionary.messages.updated")
+      redirect_to diaries_path
     else
+      flash[:danger]  = t("dictionary.messages.not_updated")
       render :edit
     end
   end
@@ -40,19 +49,32 @@ class DiariesController < ApplicationController
   def destroy
     @diary    = Diary.find(params[:id])
     @diary.destroy
-    redirect_to diaries_path, success: t("diaries.destroy.destroy_sucess")
+    flash[:success] = t("dictionary.messages.destroyed")
+    redirect_to diaries_path
   end
 
   def show
     @child = Child.find(params[:child_id])
     @diary = Diary.find(params[:id])
-    # タグ用
-    @tags  = @diary.tags.pluck(:name).join(",")
   end
 
   private
 
     def diary_params
       params.require(:diary).permit(:title, :content, :photo)
+    end
+
+    def create_or_update_diary_tags(diary, tags)
+      # 古いタグが残らないよう、現在のタグを全て削除する
+      diary.tags.destroy_all
+      begin
+      tags.each do |tag|
+        # 既存のタグがあれば既存のレコードから取得し、なけれヴァ新たに作成する
+        tag = DiaryTag.find_or_create_by(name: tag)
+        diary.tags << tag
+        rescue ActiveRecord::RecordInvalid
+          false
+        end
+      end
     end
 end
