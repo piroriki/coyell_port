@@ -10,6 +10,16 @@ ja:
       to_user_login:      ログイン
       logout:             ログアウト
       guest_login:        ゲストログイン(閲覧用)
+    messages:
+      created:            登録しました
+      updated:            更新しました
+      destroyed:          削除しました
+      not_created:        登録に失敗しました
+      not_updated:        更新に失敗しました
+      not_destroyed:      削除に失敗しました 
+      diary:
+        created:          投稿しました
+        not_created:      投稿に失敗しました
     items: # 共通項目名
       edit:               編集
       destroy:            削除

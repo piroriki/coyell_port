@@ -75,12 +75,6 @@ ja:
         rash:              発疹
         injury:            怪我
         other:             その他
-  children: # 子供用フラッシュメッセージ共通化
-    notice: 
-      create:              登録しました
-      update:              更新しました
-      destroy:             削除しました
-      failed:              失敗しました
   user: # 家族ユーザー用フラッシュ共通化
     notice:
       create:              "%{user_name}さんを登録しました"

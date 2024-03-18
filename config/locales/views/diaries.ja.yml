@@ -4,11 +4,8 @@ ja:
       title:           日記の投稿
     edit:
       title:           日記の編集
-      edit_success:    投稿しました
     show:
       title:           日記の詳細
-    destroy:
-      destroy_success: 削除しました
     links:
       to_new_diary:    登録
       to_edit_diary:   編集
