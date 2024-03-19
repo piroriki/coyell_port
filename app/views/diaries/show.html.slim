@@ -8,16 +8,23 @@ table.table.table-hover
       th = Diary.human_attribute_name(:content)
       th = Diary.human_attribute_name(:photo)
       th = "タグ"
+      th = t"dictionary.items.edit"
+      th = t"dictionary.items.destroy"
   tbody 
       tr 
-        td = @height.title
+        td = @diary.title
         td = @diary.content
         - if @diary.photo.present?
           / 画像があれば、@diaryから画像ファイルのURLを取得して表示する
           td = image_tag @diary.photo.url 
-        - if @diary.tags.present?
+        - else 
+          td = "no image"
+        - if @diary_tags.present?
           / タグがあれば表示させる
           .mb-3
-            = render "diaries/tags", diary: @diary
+            - @diary_tags.each do |tag|
+              td = link_to tag.name, search_tag_path(diary_tag_id: tag.id) 
+        - else 
+          td = " "
         td = link_to t("diaries.links.to_edit_diary"), edit_child_diary_path(id: @diary.id), data: { turbo_method: :get }
         td = link_to t("diaries.links.destroy_diary"), child_diary_path, data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"
