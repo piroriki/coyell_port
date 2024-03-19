@@ -1,0 +1,4 @@
+- tag_list.each do |list|   
+  span.badge.rounded-pill.text-bg-dark  
+    = link_to list.name, search_tag_path(diary_tag_id: list.id)
+    = "(#{list.diaries.count})"
