@@ -5,9 +5,9 @@ ja:
     new:
       title:         お子様の新規登録
     show:
-      title:         "%{child_name}さんの詳細"
+      title:         "%{name}さんの詳細"
     edit:
-      title:         "{child_name}さんの編集"
+      title:         "%{name}さんの編集"
     links:
       to_new_child:  お子様新規登録
       to_children:   お子様一覧
