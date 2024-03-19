@@ -25,9 +25,9 @@ h2 = t".title"
     = f.label          :photo
     = f.file_field     :photo, class: "form-control", id: "diary_photo"
 
-  .form-group 
+  .form-group.mt-3.mb-3 
     = f.label          :tag_names
-    = f.text_area      :tag_names, rows: 2, class: "tag-input form-control", id: "diary_tag_names"
+    = f.text_area      :tag_names, rows: 2, class: "tag-input form-control", value: diary.tags.map(&:name).join("\n"), id: "diary_tag_names"
 
   .form-group 
     = f.hidden_field   :child_id, value: @child.id
