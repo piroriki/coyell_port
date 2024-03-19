@@ -18,6 +18,7 @@ ja:
       symptom:             症状
       bath:                お風呂
       diary:               日記
+      diary_tag:           タグ
     attributes: # 各種モデルの属性定義
       admin: # 管理者
         name:              管理者名
@@ -45,6 +46,7 @@ ja:
         title:             タイトル
         content:           本文
         photo:             画像
+        tag_name:          タグ
   attributes: # 全モデルで共通する属性を定義
     id:                    ID
     email:                 メールアドレス
