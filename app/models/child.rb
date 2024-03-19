@@ -17,6 +17,7 @@ class Child < ApplicationRecord
   has_many :symptoms,            dependent: :destroy
   has_many :baths,               dependent: :destroy
   has_many :execretions,         dependent: :destroy
+  has_many :diaries,             dependent: :destroy
 
   # 性別の分類をあらかじめセットしておく
   enum gender: { other: 0, male: 1, female: 2 }
