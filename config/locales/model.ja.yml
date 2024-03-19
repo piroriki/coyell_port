@@ -77,27 +77,6 @@ ja:
         rash:              発疹
         injury:            怪我
         other:             その他
-  user: # 家族ユーザー用フラッシュ共通化
-    notice:
-      create:              "%{user_name}さんを登録しました"
-      update:              "%{user_name}さんを更新しました"
-      destroy:             "%{user_name}さんを削除しました"
-      failed:              情報の変更に失敗しました
-      login:               ログインしました
-      logout:              ログアウトしました
-      tag_follow:          タグをフォローしました
-      tag_not_follow:      タグをフォローできませんでした
-      tag_remove_follow:   タグのフォローを解除しました
-  admins: # 管理者用フラッシュ共通化
-    notice: 
-      create:              管理者を新規追加しました
-      update:              管理者の情報を更新しました
-      destroy:             管理者を削除しました
-      failed:              情報の変更に失敗しました
-      login:               管理者のログインに成功しました
-      logout:              管理者がログアウトしました
-      limited_access:      不正な侵入です
-
   helpers:
     placeholder: # 入力フォーム用
       user:

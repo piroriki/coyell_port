@@ -2,14 +2,25 @@ ja:
   admins:
     registrations:
       new:
-        title: 管理者新規登録
+        title:             管理者新規登録
     sessions:
       new:
-        title: ログイン
+        title:             管理者ログイン
     index:
-      title: ユーザー一覧
+      title:               登録済みユーザー一覧
     show:
-      title: "%{user_name}さんのユーザー情報"
+      title:               管理者の情報詳細
     edit:
-      title: "%{user_name}さんのユーザー情報編集"
+      title:               管理者の情報編集
+    messages: 
+      created:             管理者を新規追加しました
+      updated:             管理者の情報を更新しました
+      destroyed:           管理者を削除しました
+      login:               管理者のログインに成功しました
+      logout:              管理者がログアウトしました
+      limited_access:      不正な侵入です
+      not_created:         管理者の追加に失敗しました
+      not_updated:         管理者の更新に失敗しました
+      not_destroyed:       管理者の削除に失敗しました 
+
   

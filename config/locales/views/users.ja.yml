@@ -2,11 +2,23 @@ ja:
   users:
     registrations:
       new:
-        title: ユーザー新規登録
+        title:               ユーザー新規登録
       edit:
-        title: プロフィール編集
+        title:               プロフィール編集
     sessions:
       new:
-        title: ログイン
+        title:               ログイン
     show:
-      title:   プロフィール
+      title:                 プロフィール
+    messages:
+      created:               "%{user_name}さんを登録しました"
+      updated:               "%{user_name}さんを更新しました"
+      destroyed:             "%{user_name}さんを削除しました"
+      login:                 ログインしました
+      logout:                ログアウトしました
+      tag_followed:          タグをフォローしました
+      tag_not_followed:      タグをフォローできませんでした
+      tag_removed_follow:    タグのフォローを解除しました
+      not_created:           ユーザー登録に失敗しました
+      not_updated:           ユーザー更新に失敗しました
+      not_destroyed:         ユーザー削除に失敗しました
