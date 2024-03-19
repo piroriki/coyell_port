@@ -18,9 +18,12 @@ table.table.table-hover
         td = link_to "#{diary.title}", child_diary_path(id: @diary.id)
         td = diary.content
         td = diary.photo
-        - if @diary.tags.present?
-          / タグがあれば表示させる
+        - if @tag_list.present?
+          / タグがあれば件数とともに表示させる
           .mb-3
-            td = render "diaries/tags", diary: diary
+            - @tag_list.each do |list|
+              = link_to list.name, search_tag_path(diary_tag_id: list.id)
+              = "(#{list.diaries.count})"
+
         td = link_to t("diaries.links.to_edit_diary"), edit_child_diary_path(id: diary.id), class: "btn btn-primary"
         td = link_to t("diaries.links.destroy_diary"), child, data: { turbo_method: :delete, turbo_confirm: "#{diary.title}を削除してもよろしいですか?"}, class: "btn btn-danger"
