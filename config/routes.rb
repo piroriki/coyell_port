@@ -43,6 +43,9 @@ Rails.application.routes.draw do
   # 複数モデルを一つのビューに表示
   get "record", to: "homes#record"
 
+  # タグ検索用
+  get "search_tag", to: "diaries#search_tag"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

@@ -1,0 +1,5 @@
+h2 = "タグが#{@tag.name}の投稿一覧"
+
+@tag_list.each do |list|
+  = link_to list.name, search_tag_path(diary_tag_id: list.id)
+  = ("#{list.diaries.count}")
