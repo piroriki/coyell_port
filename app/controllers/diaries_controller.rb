@@ -8,18 +8,16 @@ class DiariesController < ApplicationController
   def create
     @child    = Child.find(params[:child_id])
     @diary    = Diary.new(diary_params)
-    tag_names  = params[:diary][:tag_names]
+    @diary.end_user_id = current_end_user.id
+     # 受け取った値を,で区切って配列にする
+    tag_list = params[:diary][:name].split(',')
     if @diary.save
-      # tag_namesにタグがあれば、一つずつに分割する
-      if tag_names.present?
-        tags = tag_names.split("\n").map(&:strip).uniq
-        create_or_update_diary_tags(@diary, tags)
-      end
-      flash[:success] = t("dictionary.messages.diary.created")
-      redirect_to diaries_path
+      @diary.save_workout_tags(tag_list)
+      flash[:success]   = t("dictionary.messages.diary.created")
+      redirect_to child_diary_path(id: @diary.id)
     else
-      flash[:danger]  = t("dictionary.messages.diary.not_created")
-      render :new
+      flash[:danger]    = t("dictionary.messages.diary.not_created")
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -61,7 +59,7 @@ class DiariesController < ApplicationController
   private
 
     def diary_params
-      params.require(:diary).permit(:title, :content, :photo)
+      params.require(:diary).permit(:title, :content, :photo, :tag_names, :tags)
     end
 
     def create_or_update_diary_tags(diary, tags)

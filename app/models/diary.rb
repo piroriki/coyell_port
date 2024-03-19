@@ -12,5 +12,26 @@ class Diary < ApplicationRecord
 
   # バリデーション
   validates :content, presence: true, length: { maximum: 5000 }
-
+  
+  # タグ保存用
+  def save_diary_tags(tags)
+    # タグが存在していれば、タグの名前を配列として全て取得
+      current_tags = self.diaries.pluck(:name) unless self.diary_tags.nil?
+      # 現在取得したタグから送られてきたタグを除いてoldtagとする
+      old_tags = current_tags - tags
+      # 送信されてきたタグから現在存在するタグを除いたタグをnewとする
+      new_tags = tags - current_tags
+  
+      # 古いタグを消す
+      old_tags.each do |old_name|
+        self.workout_tags.delete DiaryTag.find_by(name: old_name)
+      end
+  
+      # 新しいタグを保存
+      new_tags.each do |new_name|
+        diary_tag = DiaryTag.find_or_create_by(name: new_name)
+        self.diary_tags << diary_tag
+      end
+    end
+  end
 end

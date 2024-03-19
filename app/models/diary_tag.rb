@@ -8,7 +8,7 @@ class DiaryTag < ApplicationRecord
   before_validation :downcase_name
 
   # バリデーション
-  validates :name, presence: true, length: { maximum:50 }
+  validates :name, presence: true,uniqueness: { case_sensitive: false }, length: { maximum:50 }
 
   private
 
