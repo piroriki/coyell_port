@@ -26,6 +26,10 @@ h2 = t".title"
     = f.file_field     :photo, class: "form-control", id: "diary_photo"
 
   .form-group 
+    = f.label          :tag_names
+    = f.text_area      :tag_names, rows: 2, class: "tag-input form-control", id: "diary_tag_names"
+
+  .form-group 
     = f.hidden_field   :child_id, value: @child.id
 
   = f.submit(t"helpers.submit.create")

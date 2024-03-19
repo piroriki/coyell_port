@@ -1,0 +1,26 @@
+h2 = t".title"
+
+= link_to t("diaries.links.to_new_diary"), new_child_diary_path, class: "btn btn-primary"
+
+.mb-3 
+table.table.table-hover 
+  thead.thead-default 
+    tr 
+      th = Diary.human_attribute_name(:title)
+      th = Diary.human_attribute_name(:content)
+      th = Diary.human_attribute_name(:photo)
+      th
+      th = t"dictionary.items.edit"
+      th = t"dictionary.items.destroy"
+  tbody 
+    - @diaries.each do |diary|
+      tr 
+        td = link_to "#{diary.title}", child_diary_path(id: @diary.id)
+        td = diary.content
+        td = diary.photo
+        - if @diary.tags.present?
+          / タグがあれば表示させる
+          .mb-3
+            td = render "diaries/tags", diary: diary
+        td = link_to t("diaries.links.to_edit_diary"), edit_child_diary_path(id: diary.id), class: "btn btn-primary"
+        td = link_to t("diaries.links.destroy_diary"), child, data: { turbo_method: :delete, turbo_confirm: "#{diary.title}を削除してもよろしいですか?"}, class: "btn btn-danger"
