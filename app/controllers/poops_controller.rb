@@ -9,8 +9,10 @@ class PoopsController < ApplicationController
     @child = Child.find(params[:child_id])
     @poop  = Poop.new(poop_params)
     if @poop.save
-      redirect_to child_poop_path(id: @poop.id), notice: "登録しました"
+      flash[:success] = t("dictionary.messages.created")
+      redirect_to child_poop_path(id: @poop.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_created")
       render :new, status: unprocessable_entity
     end
   end
@@ -24,8 +26,10 @@ class PoopsController < ApplicationController
     @child = Child.find(params[:child_id])
     @poop  = Poop.find(params[:id])
     if @poop.update(poop_params)
-      redirect_to child_poop_path, notice: "更新しました"
+      flash[:success] = t("dictionary.messages.updated")
+      redirect_to child_poop_path
     else
+      flash[:danger]  = t("dictionary.messages.not_updated")
       render :edit, status: :unprocessable_entity
     end
   end

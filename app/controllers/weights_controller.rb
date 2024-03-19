@@ -9,8 +9,10 @@ class WeightsController < ApplicationController
     @child  = Child.find(params[:child_id])
     @weight = Weight.new(weight_params)
     if @weight.save
-      redirect_to child_weight_path(id: @weight.id), notice: "登録しました"
+      flash[:success] = t("dictionary.messages.created")
+      redirect_to child_weight_path(id: @weight.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_created")
       render :new, status: :unproccesable_entity
     end
   end
@@ -24,8 +26,10 @@ class WeightsController < ApplicationController
     @child  = Child.find(params[:child_id])
     @weight = Weight.find(params[:id])
     if @weight.update(weight_params)
-      redirect_to child_weight_path(id: @weight.id), notice: "更新しました"
+      flash[:success] = t("dictionary.messages.updated")
+      redirect_to child_weight_path(id: @weight.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_updated")
       render :edit, status: :unproccesable_entity
     end
   end

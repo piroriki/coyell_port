@@ -9,8 +9,10 @@ class ExecretionsController < ApplicationController
     @child      = Child.find(params[:child_id])
     @execretion = Execretion.new(execretion_params)
     if @execretion.save
-      redirect_to child_execretion_path(id: @execretion.id), notice: "登録しました"
+      flash[:success] = t("dictionary.messages.created")
+      redirect_to child_execretion_path(id: @execretion.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_created")
       render :new, status: :unprocessable_entity
     end
   end
@@ -24,8 +26,10 @@ class ExecretionsController < ApplicationController
     @child      = Child.find(params[:child_id])
     @execretion = Execretion.find(params[:id])
     if @execretion.update(execretion_params)
-      redirect_to child_execretion_path(id: @execretion.id),notice: "更新しました"
+      flash[:success] = t("dictionary.messages.updated")
+      redirect_to child_execretion_path(id: @execretion.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_updated")
       render :edit, status: :unprocessable_entity
     end
   end

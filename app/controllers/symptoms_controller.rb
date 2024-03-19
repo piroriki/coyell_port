@@ -10,8 +10,10 @@ class SymptomsController < ApplicationController
     @child   = Child.find(params[:child_id])
     @symptom = Symptom.new(symptom_params)
     if @symptom.save
-      redirect_to child_symptom_path(id: @symptom.id), notice: "登録しました"
+      flash[:success] = t("dictionary.messages.created")
+      redirect_to child_symptom_path(id: @symptom.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_created")
       render :new, status: :unprocessable_entity
     end
   end
@@ -26,8 +28,10 @@ class SymptomsController < ApplicationController
     @child   = Child.find(params[:child_id])
     @symptom = Symptom.find(params[:id])
     if @symptom.update(symptom_params)
-      redirect_to child_symptom_path(id: @symptom.id), notice: "更新しました"
+      flash[:success] = t("dictionary.messages.updated")
+      redirect_to child_symptom_path(id: @symptom.id)
     else
+      flash[:dager]   = t("dictionary.messages.not_updated")
       render :edit, status: :unprocessable_entity
     end
   end

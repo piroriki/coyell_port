@@ -10,8 +10,10 @@ class MealsController < ApplicationController
     @child = Child.find(params[:child_id])
     @meal  = Meal.new(meal_params)
     if @meal.save
-      redirect_to child_meal_path(id: @meal.id), notice: "登録しました"
+      flash[:success] = t("dictionary.messages.created")
+      redirect_to child_meal_path(id: @meal.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_created")
       render :new, status: :unprocessable_entity
     end
   end
@@ -26,8 +28,10 @@ class MealsController < ApplicationController
     @child = Child.find(params[:child_id])
     @meal  = Meal.find(params[:id])
     if @meal.update(meal_params)
-      redirect_to child_meal_path(id: @meal.id), notice: "更新しました"
+      flash[:success] = t("dictionary.messages.updated")
+      redirect_to child_meal_path(id: @meal.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_updated")
       render :edit, status: :unprocessable_entity
     end
   end

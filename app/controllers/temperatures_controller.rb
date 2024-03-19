@@ -9,8 +9,10 @@ class TemperaturesController < ApplicationController
     @child       = Child.find(params[:child_id])
     @temperature = Temperature.new(temperature_params)
     if @temperature.save
-      redirect_to child_temperature_path(id: @temperature.id), notice: "登録しました"
+      flash[:success] = t("dictionary.messages.created")
+      redirect_to child_temperature_path(id: @temperature.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_created")
       render :new, status: :unprocessable_entity
     end
   end
@@ -24,8 +26,10 @@ class TemperaturesController < ApplicationController
     @child       = Child.find(params[:child_id])
     @temperature = Temperature.find(params[:id])
     if @temperature.update(temperature_params)
-      redirect_to child_temperature_path(id: @temperature.id), notice: "更新しました"
+      flash[:success] = t("dictionary.messages.updated")
+      redirect_to child_temperature_path(id: @temperature.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_updated")
       render :edit, status: :unprocessable_entity
     end
   end

@@ -9,8 +9,10 @@ class BathsController < ApplicationController
     @child = Child.find(params[:child_id])
     @bath  = Bath.new(bath_params)
     if @bath.save
-      redirect_to child_bath_path(id: @bath.id), notice: "登録しました"
+      flash[:success] = t("dictionary.messages.created")
+      redirect_to child_bath_path(id: @bath.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_created")
       render :new, status: :unprocessable_entity
     end
   end
@@ -24,8 +26,10 @@ class BathsController < ApplicationController
     @child = Child.find(params[:child_id])
     @bath  = Bath.find(params[:id])
     if @bath.update(bath_params)
-      redirect_to child_bath_path(id: @bath.id), notice: "更新しました"
+      flash[:success] = t("dictionary.messages.updated")
+      redirect_to child_bath_path(id: @bath.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_updated")
       render :edit, status: :unprocessable_entity
     end
   end

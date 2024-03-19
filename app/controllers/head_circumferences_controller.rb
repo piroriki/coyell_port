@@ -9,8 +9,10 @@ class HeadCircumferencesController < ApplicationController
     @child              = Child.find(params[:child_id])
     @head_circumference = HeadCircumference.new(head_circumference_params)
     if @head_circumference.save
-      redirect_to child_head_circumference_path(id: @head_circumference.id), notice: "登録しました"
+      flash[:success] = t("dictionary.messages.created")
+      redirect_to child_head_circumference_path(id: @head_circumference.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_created")
       render :new, status: :unprocessable_entity
     end
   end
@@ -24,8 +26,10 @@ class HeadCircumferencesController < ApplicationController
     @child              = Child.find(params[:child_id])
     @head_circumference = HeadCircumference.find(params[:id])
     if @head_circumference.update(head_circumference_params)
-      redirect_to child_head_circumference_path(id: @head_circumference.id), notice: "更新しました"
+      flash[:success] = t("dictionary.messages.updated")
+      redirect_to child_head_circumference_path(id: @head_circumference.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_updated")
       render :edit, status: :unprocessable_entity
     end
   end

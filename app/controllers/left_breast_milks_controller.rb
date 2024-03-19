@@ -9,8 +9,10 @@ class LeftBreastMilksController < ApplicationController
     @child         = Child.find(params[:child_id])
     @l_breast_milk = LeftBreastMilk.new(l_breast_milk_params)
     if @l_breast_milk.save
-      redirect_to child_left_breast_milk_path(id: @l_breast_milk.id), notice: "登録しました"
+      flash[:success] = t("dictionary.messages.created")
+      redirect_to child_left_breast_milk_path(id: @l_breast_milk.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_created")
       render new, status: :unprocessable_entity
     end
   end
@@ -24,8 +26,10 @@ class LeftBreastMilksController < ApplicationController
     @child         = Child.find(params[:child_id])
     @l_breast_milk = LeftBreastMilk.find(params[:id])
     if @l_breast_milk.update(l_breast_milk_params)
-      redirect_to child_left_breast_milk_path(id: @l_breast_milk.id), notice: "更新しました"
+      flash[:success] = t("dictionary.messages.updated")
+      redirect_to child_left_breast_milk_path(id: @l_breast_milk.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_updated")
       render :edit, status: :unprocessable_entity
     end
   end

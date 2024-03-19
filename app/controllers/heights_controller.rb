@@ -12,8 +12,10 @@ class HeightsController < ApplicationController
     @child  = Child.find(params[:child_id])
     @height = Height.new(height_params)
     if @height.save
-      redirect_to child_height_path(id: @height.id), notice: "登録しました"
+      flash[:success] = t("dictionary.messages.created")
+      redirect_to child_height_path(id: @height.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_created")
       render :new, status: :unprocessable_entity
     end
   end
@@ -27,8 +29,10 @@ class HeightsController < ApplicationController
     @child = Child.find(params[:child_id])
     @height = Height.find(params[:id])
     if @height.update(height_params)
-      redirect_to child_height_path(id: @height.id), notice: "更新しました"
+      flash[:success] = t("dictionary.messages.updated")
+      redirect_to child_height_path(id: @height.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_updated")
       render :edit, status: :unproccesable_entity
     end
   end

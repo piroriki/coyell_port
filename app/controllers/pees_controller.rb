@@ -9,8 +9,10 @@ class PeesController < ApplicationController
     @child = Child.find(params[:child_id])
     @pee   = Pee.new(pee_params)
     if @pee.save
-      redirect_to child_pee_path(id: @pee.id), notice: "登録しました"
+      flash[:success] = t("dictionary.messages.created")
+      redirect_to child_pee_path(id: @pee.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_created")
       render :new, status: :unprocessable_entity
     end
   end
@@ -24,8 +26,10 @@ class PeesController < ApplicationController
     @child = Child.find(params[:child_id])
     @pee   = Pee.find(params[:id])
     if @pee.update(pee_params)
-      redirect_to child_pee_path(id: @pee.id), notice: "更新しました"
+      flash[:success] = t("dictionary.messages.updated")
+      redirect_to child_pee_path(id: @pee.id)
     else
+      flash[:danger]  = t("dictionary.messages.not_updated")
       render :edit, status: :unprocessable_entity
     end
   end
