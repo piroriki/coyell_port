@@ -46,6 +46,10 @@ Rails.application.routes.draw do
   # タグ検索用
   get "search_tag", to: "diaries#search_tag"
 
+  # チャット用
+  get "chat/:id", to: "chats#show", as: "chat"
+  resources :chats, only: [:create]
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
