@@ -1,6 +1,8 @@
 h2 = t".title"
-
-h3 = Child.human_attribute_name(:name)
+br
+h5 = User.human_attribute_name(:name)
 = @user.name
-h3 = Child.human_attribute_name(:email)
+h5 = User.human_attribute_name(:email)
 = @user.email
+
+= link_to t("links.to_chat"), chat_path(user_id: current_user.id)
