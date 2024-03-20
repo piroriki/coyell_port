@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :children, dependent: :destroy
 
   # チャット用中間テーブル、チャットとの関連付け
+  has_many :chat_rooms,          through: :user_room_relations
   has_many :user_room_relations, dependent: :destroy
   has_many :chats,               dependent: :destroy
 

@@ -4,4 +4,7 @@ class Chat < ApplicationRecord
   belongs_to :user
   belongs_to :chat_room
 
+  # バリデーション
+  validates :message, presence: true
+
 end
