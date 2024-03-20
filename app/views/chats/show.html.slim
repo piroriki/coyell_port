@@ -1,0 +1,32 @@
+.container 
+  .row 
+    .col-xs-6
+      h2 = t".title"
+
+      - if current_user != @user
+          = link_to "チャットを始める", chat_path(@user.id)
+
+      table.message.table 
+        thead 
+          tr 
+            / Aさん用
+            th(style = "text-align: left;  font-size: 20px;") = current_user.name 
+            / Bさん用
+            th(style = "text-align: right; font-size: 20px;") = @user.name
+        - @chats.each do |chat|
+          - if chat.user_id == current_user.id 
+          tbody 
+            tr 
+              th 
+                p(style = "text-align: left;")
+                = chat.message 
+          - else 
+            tr 
+              th 
+                p(style = "text_-align: right;")
+                = chat.message 
+
+      = form_with model: @chat, remote: true do |f|
+        = f.text_field   :message
+        = f.hidden_field :chat_room_id
+        = f.submit "送信", class: "btn btn-sm btn-success chat-btn"
