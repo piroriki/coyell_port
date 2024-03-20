@@ -23,8 +23,9 @@ ja:
       admin: # 管理者
         name:              管理者名
       user: # 家族ユーザー
-        name:              ユーザー名
+        name:              お名前
         current_password:  現在のパスワード
+        email:             メールアドレス
       child: # 子供
         name:              お名前
         gender:            性別
@@ -49,7 +50,6 @@ ja:
         tag_name:          タグ
   attributes: # 全モデルで共通する属性を定義
     id:                    ID
-    email:                 メールアドレス
     password:              パスワード
     password_confirmation: パスワード(確認)
     created_at:            作成日

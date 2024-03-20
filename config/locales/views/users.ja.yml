@@ -18,7 +18,7 @@ ja:
       logout:                ログアウトしました
       tag_followed:          タグをフォローしました
       tag_not_followed:      タグをフォローできませんでした
-      tag_removed_follow:    タグのフォローを解除しました
+      tag_remove_followed:   タグのフォローを解除しました
       not_created:           ユーザー登録に失敗しました
       not_updated:           ユーザー更新に失敗しました
       not_destroyed:         ユーザー削除に失敗しました
