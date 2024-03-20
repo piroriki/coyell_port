@@ -1,15 +1,22 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  
+  # 現在のパスワードにアクセスできるようにする
   attr_accessor :current_password
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
   # enum で管理者権限の設定
   enum role: { non_admin: 0, admin: 1 }
 
   # 子供との関連づけ
   has_many :children, dependent: :destroy
+
+  # チャット用中間テーブル、チャットとの関連付け
+  has_many :user_room_relations, dependent: :destroy
+  has_many :chats,               dependent: :destroy
 
   # 各種バリデーション
   # create時点のみバリデーションが動作するように追加設定
