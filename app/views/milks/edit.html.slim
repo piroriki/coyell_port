@@ -9,22 +9,4 @@ h2 = t".title"
 /.nav.justify-content-end 
 /= link_to t("children.links.to_children"), url: children_path, class: "nav-link"
 
-= form_with(model: [@child, @milk],
-  data: { turbo_method: :patch }, class: "nav-link", local: true) do |f|
-
-  .form-group 
-    = f.label             :time
-    = f.time_select       :time, {}, autofocus: true, autocomplete: "time", placeholder: true, class: "form-control", id: "milk_time"
-
-  .form-group 
-    = f.label             :amount 
-    = f.number_field      :amount, autofocus: true, autocompelete: "amount", placeholder: true, class: "form-control", id: "milk_amount"
-  
-  .form-group 
-    = f.label             :memo
-    = f.text_area         :memo, autofocus: true, autocomplete: "memo", placeholder: true, class: "form-control", id: "milk_memo"
-
-  .form-group 
-    = f.hidden_field   :child_id, value: @child.id
-
-  = f.submit(t"helpers.submit.update")
+= render "milks/form"
