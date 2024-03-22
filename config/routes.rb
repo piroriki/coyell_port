@@ -47,8 +47,7 @@ Rails.application.routes.draw do
   get "search_tag", to: "diaries#search_tag"
 
   # チャット用
-  get "chat/:id", to: "chats#show", as: "chat"
-  resources :chats, only: [:create]
+  resources :rooms
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

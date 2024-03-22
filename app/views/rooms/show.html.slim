@@ -1,0 +1,32 @@
+- @entries.each do |e|
+  / eachでentryユーザーがログインユーザーか都度チェックし、
+  / ログインユーザーの場合のみ、@classにcurrent_userの文字列を代入する
+  / それ以外では@classに空白を代入する
+  - current_user == e.user ? @class = "current_user" : @class = " "
+    / entryユーザーがログインユーザーの場合のみ、entryユーザー名を表示する
+    - if e.user != current_user 
+      <h5 class = "text-left <%= @class %>" id = "<%= @class %>" style = "font-size: 30px;" data-id = "<%= e.user.id %>">
+        <%= link_to "@#{e.user.name}", user_path(e.user.id) %>
+      </h5>
+    - else 
+      <h5 class = "text-left <%= @class %>" id = "<%= @class %>" data-id = "<%= e.user.id %>"></h5>
+
+/ メッセージ内容はパーシャルに分割
+<div id ="direct_messages" date_room_id = "<%= @room.id %>">
+  = render "direct_messages/direct_message"
+
+/ メッセージフォーム
+<form>
+    <label style="color: white;" id="target">新しいメッセージを作成</label><br>
+    <input type="text" id="chat-input" data-behavior="room_speaker" class="form-control">
+</form>
+
+<script>
+	// トークルーム遷移時に入力フォーム記載場所にスクロールする(最新トークは下にあるため)
+	var element = document.getElementById('target'); // 移動させたい位置の要素を取得
+    var rect = element.getBoundingClientRect();
+    var position = rect.top;
+    setTimeout( function() {
+  		scrollTo(0, position);}
+		, 1000);
+</script>

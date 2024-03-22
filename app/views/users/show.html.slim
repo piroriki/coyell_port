@@ -1,8 +1,14 @@
-h2 = t".title"
-br
-h5 = User.human_attribute_name(:name)
-= @user.name
-h5 = User.human_attribute_name(:email)
-= @user.email
-
-= link_to t("links.to_chat"), chat_path(user_id: current_user.id)
+- if user_signed_in?
+  - unless @user.id == current_user.id 
+    / 既にroomが存在すれば、既存のroomに入室する
+    - if @isRoom == true 
+      / link_toでroomに入室できるようにする
+      = link_to room_path(@roomId) do 
+        <button id = "dm_submit"><i class = "fas fa-envelope"></i></button>
+    - else 
+      / roomが存在しなければ、roomを新たに作成する
+      = form_with model: @room, url: room_path do |f|
+        / fields_forで、親モデルに紐づく子モデルのデータを編集する
+        = fields_for @entry do |e|
+          = e.hidden_field :user_id, value: @user.id 
+          <button type = "submit" id = "dm_submit"><i class = "fas fa-envelope"></i></button>

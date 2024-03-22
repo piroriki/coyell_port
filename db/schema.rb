@@ -22,21 +22,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_20_072612) do
     t.integer "child_id"
   end
 
-  create_table "chat_rooms", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "chats", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "chat_room_id", null: false
-    t.string "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["chat_room_id"], name: "index_chats_on_chat_room_id"
-    t.index ["user_id"], name: "index_chats_on_user_id"
-  end
-
   create_table "children", force: :cascade do |t|
     t.string "name", null: false
     t.integer "gender", default: 0, null: false
@@ -70,6 +55,25 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_20_072612) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_diary_tags_on_name", unique: true
+  end
+
+  create_table "direct_messages", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "room_id", null: false
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_direct_messages_on_room_id"
+    t.index ["user_id"], name: "index_direct_messages_on_user_id"
+  end
+
+  create_table "entries", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "room_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_entries_on_room_id"
+    t.index ["user_id"], name: "index_entries_on_user_id"
   end
 
   create_table "execretions", force: :cascade do |t|
@@ -146,6 +150,12 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_20_072612) do
     t.integer "child_id"
   end
 
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "symptoms", force: :cascade do |t|
     t.time "time", null: false
     t.integer "kinds", default: 0, null: false
@@ -162,15 +172,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_20_072612) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "child_id"
-  end
-
-  create_table "user_room_relations", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "room_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_user_room_relations_on_room_id"
-    t.index ["user_id"], name: "index_user_room_relations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

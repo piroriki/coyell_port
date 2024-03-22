@@ -1,6 +1,6 @@
-class CreateUserRoomRelations < ActiveRecord::Migration[7.0]
+class CreateEntries < ActiveRecord::Migration[7.0]
   def change
-    create_table :user_room_relations do |t|
+    create_table :entries do |t|
       t.references :user, null: false, foregin_key: true
       t.references :room, null: false, foregin_key: true
 

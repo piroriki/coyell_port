@@ -24,6 +24,9 @@ gem "enum_help"
 # 画像添付用
 gem "carrierwave", "~> 2.0"
 
+# チャット機能用
+gem "jquery-rails"
+
 # デバッグ用
 gem "pry-rails"
 

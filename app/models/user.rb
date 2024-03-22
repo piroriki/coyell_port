@@ -15,9 +15,9 @@ class User < ApplicationRecord
   has_many :children, dependent: :destroy
 
   # チャット用中間テーブル、チャットとの関連付け
-  has_many :chat_rooms,          through: :user_room_relations
-  has_many :user_room_relations, dependent: :destroy
-  has_many :chats,               dependent: :destroy
+  has_many :rooms,               through:   :entries
+  has_many :entries,             dependent: :destroy
+  has_many :direct_messages,     dependent: :destroy
 
   # 各種バリデーション
   # create時点のみバリデーションが動作するように追加設定

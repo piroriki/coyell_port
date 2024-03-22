@@ -1,0 +1,7 @@
+# メッセージ一覧を表示する
+# append: 引数指定した要素を、親要素.messageの末尾に追加するメソッド
+$("message").append("<p style = "text_align: left;"><%= @chat.message %></p>");
+# form-withのクラス名をclass:"js-form"で指定し、resetで入力フォームの内容をリセットさせる
+$(".js-form")[0].reset();
+# エラー文をリセットする
+$("error-alert").empty();
