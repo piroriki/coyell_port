@@ -1,2 +1,2 @@
-module ChatsHelper
+module DirectMessagesHelper
 end
