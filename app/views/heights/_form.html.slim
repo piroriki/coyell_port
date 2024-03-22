@@ -1,0 +1,12 @@
+= form_with(model: [@child, @height], class: "nav-link", local: true) do |f|
+
+  .form-group 
+    = f.label          :height
+    = f.number_field   :height, autofocus: true, autocomplete: "height", placeholder: true, class: "form-control", id: "height_height"
+
+  .form-group 
+    = f.hidden_field   :child_id, value: @child.id
+
+  = f.submit button_text
+
+
