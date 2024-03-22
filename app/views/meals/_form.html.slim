@@ -5,14 +5,14 @@
     = f.time_select       :time, {}, autofocus: true, autocomplete: "time", placeholder: true, class: "form-control", id: "meal_time"
 
   .form-group 
-    = f.label        :kinds 
-    = f.select       :kinds, @kinds_options, { include_blank: "ご飯の種類を選択してください"}, class: "nav-link", id: "meal_kinds"
+    = f.label             :kinds 
+    = f.select            :kinds, @kinds_options, { include_blank: "ご飯の種類を選択してください"}, class: "nav-link", id: "meal_kinds"
 
   .form-group 
     = f.label             :memo
     = f.text_area         :memo, autofocus: true, autocomplete: "memo", placeholder: true, class: "form-control", id: "meal_memo"
 
   .form-group 
-    = f.hidden_field   :child_id, value: @child.id
+    = f.hidden_field       :child_id, value: @child.id
 
   = f.submit button_text
