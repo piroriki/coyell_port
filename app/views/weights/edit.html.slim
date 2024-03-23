@@ -9,14 +9,4 @@ h2 = t".title"
 /.nav.justify-content-end 
 /= link_to t("children.links.to_children"), url: children_path, class: "nav-link"
 
-= form_with(model: [@child, @weight],
-  data: { turbo_method: :patch }, class: "nav-link", local: true) do |f|
-
-  .form-group 
-    = f.label          :weight
-    = f.number_field   :weight, autofocus: true, autocomplete: "weight", placeholder: true, class: "form-control", id: "weight_weight"
-
-  .form-group 
-    = f.hidden_field   :child_id, value: @child.id
-
-  = f.submit(t"helpers.submit.update")
+= render "weights/form"

@@ -1,0 +1,10 @@
+= form_with(model: [@child, @weight], class: "nav-link", local: true) do |f|
+
+  .form-group 
+    = f.label          :weight
+    = f.number_field   :weight, autofocus: true, autocomplete: "weight", placeholder: true, class: "form-control", id: "weight_weight"
+
+  .form-group 
+    = f.hidden_field   :child_id, value: @child.id
+
+  = f.submit button_text
