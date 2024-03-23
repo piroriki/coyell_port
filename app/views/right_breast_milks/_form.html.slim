@@ -1,0 +1,14 @@
+= form_with(model: [@child, @r_breast_milk], class: "nav-link", local: true) do |f|
+
+  .form-group 
+    = f.label             :time
+    = f.time_select       :time, {}, autofocus: true, autocomplete: "time", placeholder: true, class: "form-control", id: "r_breast_milk_time"
+  
+  .form-group 
+    = f.label             :memo
+    = f.text_area         :memo, autofocus: true, autocomplete: "memo", placeholder: true, class: "form-control", id: "r_breast_milk_memo"
+
+  .form-group 
+    = f.hidden_field   :child_id, value: @child.id
+
+  = f.submit button_text
