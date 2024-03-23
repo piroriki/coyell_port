@@ -25,9 +25,9 @@ h2 = t".title"
     = f.label          :photo
     = f.file_field     :photo, class: "form-control", id: "diary_photo"
 
-  .form-group.mt-3.mb-3 
-    = f.label          :name
-    = f.text_area      :name, rows: 2, class: "tag-input form-control", value: @tag_list, id: "diary_tag_names"
+  .form-group.mt-3.mb-3
+    = f.label          "タグ(,で区切ると、複数タグを登録できます)"
+    = f.text_field     :name, value: @tag_list, row: 2, class: "form-control" 
 
   .form-group 
     = f.hidden_field   :child_id, value: @child.id

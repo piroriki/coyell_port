@@ -7,9 +7,9 @@ table.table.table-hover
       th = Diary.human_attribute_name(:title)
       th = Diary.human_attribute_name(:content)
       th = Diary.human_attribute_name(:photo)
-      th = "タグ"
       th = t"dictionary.items.edit"
       th = t"dictionary.items.destroy"
+      th = "タグ"
   tbody 
       tr 
         td = @diary.title
@@ -19,11 +19,8 @@ table.table.table-hover
           td = image_tag @diary.photo.url 
         - else 
           td = "no image"
-        - if @diary_tags.present?
-          / タグがあれば表示させる
-          .mb-3
-            td = render "diaries/tag", tag_list: @tag_list
-        - else 
-          td = "no tag"
         td = link_to t("diaries.links.to_edit_diary"), edit_child_diary_path(id: @diary.id), data: { turbo_method: :get }
         td = link_to t("diaries.links.destroy_diary"), child_diary_path, data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"
+        - @diary_tags.each do |tag|
+          span.badge.rounded-pill.text-bg-dark 
+            td = link_to tag.name, search_tag_path(diary_tag_id: tag.id)

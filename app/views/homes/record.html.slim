@@ -2,11 +2,20 @@
 
 /= link_to t("children.links.to_new_child"), new_child_path, class: "btn btn-primary"
 
-h2 = "Children"
+h4 = "Children"
 - @children.each do |child|
   li = child.name 
 
-h2 = "Heights"
+h4 = "Heights"
 - @heights.each do |height|
   li = height.height 
+
+h4 = "Diary"
+- @diaries.each do |diary|
+  li = diary.title 
+  li = diary.content 
+  li = diary.photo 
+  li = diary.diary_tags
+
+
         

@@ -2,6 +2,8 @@ h2 = t".title"
 
 = link_to t("diaries.links.to_new_diary"), new_child_diary_path, class: "btn btn-primary"
 
+= render "diaries/tag", tag_list: @tag_list
+
 .mb-3 
 table.table.table-hover 
   thead.thead-default 
@@ -9,18 +11,19 @@ table.table.table-hover
       th = Diary.human_attribute_name(:title)
       th = Diary.human_attribute_name(:content)
       th = Diary.human_attribute_name(:photo)
-      th
+      /th
       th = t"dictionary.items.edit"
       th = t"dictionary.items.destroy"
   tbody 
     - @diaries.each do |diary|
       tr 
-        td = link_to "#{diary.title}", child_diary_path(id: @diary.id)
+        td = link_to "#{diary.title}", child_diary_path(id: diary.id)
         td = diary.content
         td = diary.photo
-        - if @tag_list.present?
-          td = render "diaries/tag", tag_list: @tag_list
-        - else 
-          td = "no tag"
+        /- if @tag_list.present?
+        /  td = render "diaries/tag", tag_list: @tag_list
+        /- else 
+        /  td = "no tag"
         td = link_to t("diaries.links.to_edit_diary"), edit_child_diary_path(id: diary.id), class: "btn btn-primary"
-        td = link_to t("diaries.links.destroy_diary"), child, data: { turbo_method: :delete, turbo_confirm: "#{diary.title}を削除してもよろしいですか?"}, class: "btn btn-danger"
+        td = link_to t("diaries.links.destroy_diary"), child_diary_path(id: diary.id),
+             data: { turbo_method: :delete, turbo_confirm: "#{diary.title}を削除してもよろしいですか?"}, class: "btn btn-danger"
