@@ -7,9 +7,10 @@ html
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
-    /= javascript_importmap_tags
+    = javascript_importmap_tags
+    = javascript_include_tag "turbo", type: "module"
   body
     .app-title.navbar.navbar-expand-md.navbar-light.bg-light 
-    = render 'shared/header'
+    = render "shared/header"
     .container
     = yield

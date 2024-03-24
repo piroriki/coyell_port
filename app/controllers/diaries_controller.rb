@@ -45,7 +45,7 @@ class DiariesController < ApplicationController
     @diary      = Diary.find(params[:id])
     @diary.destroy
     flash[:success] = t("dictionary.messages.destroyed")
-    redirect_to diaries_path
+    redirect_to child_diaries_path, status: :see_other
   end
 
   def show

@@ -9,4 +9,4 @@ h2 = t".title"
 /.nav.justify-content-end 
 /= link_to t("children.links.to_children"), url: children_path, class: "nav-link"
 
-= render "heights/form"
+= render "heights/form", locals: { height: @height }

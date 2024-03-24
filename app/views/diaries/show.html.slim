@@ -20,7 +20,9 @@ table.table.table-hover
         - else 
           td = "no image"
         td = link_to t("diaries.links.to_edit_diary"), edit_child_diary_path(id: @diary.id), data: { turbo_method: :get }
-        td = link_to t("diaries.links.destroy_diary"), child_diary_path, data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"
+        td = link_to t("diaries.links.destroy_diary"), child_diary_path(id: @diary.id),
+             data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"
+        / タグ表示用
         - @diary_tags.each do |tag|
           span.badge.rounded-pill.text-bg-dark 
             td = link_to tag.name, search_tag_path(diary_tag_id: tag.id)

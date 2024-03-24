@@ -9,4 +9,6 @@ table.table.table-hover
       tr 
         td = "#{@height.height}センチ"
         td = link_to t("heights.links.to_edit_height"), edit_child_height_path(id: @height.id), data: { turbo_method: :get }
-        td = link_to t("heights.links.destroy_height"), child_height_path, data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"
+        td = link_to t("heights.links.destroy_height"), child_height_path(id: @height.id), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }
+        /td = link_to t("heights.links.destroy_height"), child_height_path(id: @height.id),
+             data: { turbo_method: :delete, turbo_confirm: "削除してよろしいですか？" }, class: "btn btn-danger"

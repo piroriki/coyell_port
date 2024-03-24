@@ -43,9 +43,10 @@ class HeightsController < ApplicationController
   end
 
   def destroy
-    @height = Height.find(params[:id])
+    @height  = Height.find(params[:id])
     @height.destroy
-    redirect_to children_path, notice: "削除しました"
+    flash[:success] =  "削除しました"
+    redirect_to children_path, status: :see_other
   end
 
   private
