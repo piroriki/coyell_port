@@ -1,14 +1,12 @@
-- if user_signed_in?
-  - unless @user.id == current_user.id 
-    / 既にroomが存在すれば、既存のroomに入室する
-    - if @isRoom == true 
-      / link_toでroomに入室できるようにする
-      = link_to room_path(@roomId) do 
-        <button id = "dm_submit"><i class = "fas fa-envelope"></i></button>
-    - else 
-      / roomが存在しなければ、roomを新たに作成する
-      = form_with model: @room, url: rooms_path do |f|
-        / fields_forで、親モデルに紐づく子モデルのデータを編集する
-        = fields_for @entry do |e|
-          = e.hidden_field :user_id, value: @user.id 
-          <button type = "submit" id = "dm_submit"><i class = "fas fa-envelope"></i></button>
+= link_to '編集', edit_registration_path(id: current_user.id), class: "btn btn-success float-right"
+br
+.table
+  tr
+    th = User.human_attribute_name(:name)
+    td = current_user.name
+  tr
+    th = User.human_attribute_name(:email)
+    td = current_user.email
+      /tr
+      /  th = t(User.human_attribute_name(:avatar))
+      /  td = image_tag current_user.avatar.url, class: 'rounded-circle', size: '50x50' 

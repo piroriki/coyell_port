@@ -1,0 +1,6 @@
+# メッセージ一覧を表示する
+# append: 引数指定した要素を、親要素.messageの末尾に追加するメソッド
+$("message").append("<p style = "text_align: left;"><%= @direct_message.message %></p>");
+
+# 前回の履歴が残らないようにする
+$("input[type = text]").val("")

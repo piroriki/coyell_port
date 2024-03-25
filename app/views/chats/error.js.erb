@@ -1,5 +1,0 @@
-# error_message部分をrenderでパーシャルに置換する
-# model: @chatを指定して、@chatがからかどうかを判定させる
-$(".error-alert").replaceWith(
-  "<%= j(render "shared/error_messages", model: @chat) %>"
-);

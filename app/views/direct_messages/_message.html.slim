@@ -1,0 +1,15 @@
+/ チャット履歴の表示
+.direct-messages
+- direct_messages.each do |dm| 
+  - if dm.user_id == current_user.id 
+  / 自分用
+  .message.self 
+    .message-body 
+      <p style = "text-align: left;"><%= dm.message %></p> 
+  - else 
+  / 相手用
+  .message.other 
+    .message-sender
+      <p style = "text-align: right;"><%= dm.name %></p> 
+    .message-body 
+      <p style = "text-align: right;"><%= dm.message %></p> 

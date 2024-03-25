@@ -1,0 +1,17 @@
+.container 
+  .chat-topbar
+    h4 = "#{@user.name}さんとのチャット"
+    .message.table
+      = render "direct_messages/message", direct_messages: @direct_messages
+    
+    - if current_user != @user
+        = link_to "チャットを始める", direct_messsage_path(@user.id)
+
+    .chat-form
+     / メッセージの新規作成用
+      = form_with model: @direct_message, data: { remote: true } do |f|
+        /.error_alert
+        /  = render "shared/error_messages", obj: f.object
+        = f.text_field   :message, placeholder: "メッセージを入力してください", autocomplete: "off"
+        = f.hidden_field :room_id, value: @room.id
+        = f.submit "送信", class: "btn btn-sm btn-success chat-btn"
