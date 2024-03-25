@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     # ゲストログイン用
     post   "guest_login", to: "users/sessions#guest_login"
     # ユーザープロフィール用
-    get    "users/show",  to: "users#show", as: "user_profile"
+    get    "users/:id",  to: "users#show", as: "user_profile"
   end
 
   # 子供関連のモデルをネストする

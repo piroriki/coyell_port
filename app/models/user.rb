@@ -23,6 +23,9 @@ class User < ApplicationRecord
   # create時点のみバリデーションが動作するように追加設定
   validates :password, presence: true, on: :create
 
+  # アップローダをavatarカラムと関連づける
+  mount_uploader :avatar, AvatarUploader
+
   # ゲストログイン機能のメソッドをモデルで設定することで、
   # コントローラ内のコードが見やすくなる
   def self.guest

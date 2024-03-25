@@ -1,12 +1,36 @@
-= link_to '編集', edit_registration_path(id: current_user.id), class: "btn btn-success float-right"
-br
-.table
-  tr
-    th = User.human_attribute_name(:name)
-    td = current_user.name
-  tr
-    th = User.human_attribute_name(:email)
-    td = current_user.email
-      /tr
-      /  th = t(User.human_attribute_name(:avatar))
-      /  td = image_tag current_user.avatar.url, class: 'rounded-circle', size: '50x50' 
+.profile-wrap
+  .row
+    .col-md-4.text-center
+      /= image_tag avatar_url(@user), class: "round-img" 
+    .col-md-8
+      .row
+        h5 = User.human_attribute_name(:name)
+        h5 = @user.name 
+        br
+        h5 = User.human_attribute_name(:email)
+        h5 = @user.email
+        / avatarに登録がなければ,デフォルト画像を表示する
+        - if @user.avatar.nil?
+          = "no image"
+        - else
+          = @user.avatar
+        = link_to "プロフィールを編集", edit_user_registration_path, class: "btn btn-outline-dark common-btn edit-profile-btn" 
+
+        <button type="button" class="setting" data-toggle="modal" data-target="#exampleModal"></button>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              .modal-header
+                <h5 class="modal-title" id="exampleModalLabel">設定</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
