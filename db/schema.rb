@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_26_084003) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_26_221536) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -156,6 +156,17 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_26_084003) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "study_aid_books", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "content", null: false
+    t.string "image", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["title"], name: "index_study_aid_books_on_title", unique: true
+    t.index ["user_id"], name: "index_study_aid_books_on_user_id"
+  end
+
   create_table "symptoms", force: :cascade do |t|
     t.time "time", null: false
     t.integer "kinds", default: 0, null: false
@@ -203,4 +214,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_26_084003) do
 
   add_foreign_key "diary_tag_relations", "diaries"
   add_foreign_key "diary_tag_relations", "diary_tags"
+  add_foreign_key "study_aid_books", "users"
 end
