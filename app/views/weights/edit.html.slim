@@ -1,10 +1,7 @@
 h2 = t".title"
 
-/ エラーメッセージが表示されるようにする
-- if @weight.errors.present?
-  ul#error_explanation 
-    - weight.error.full_messages.each do |message|
-      li = message 
+.errors
+  = render "shared/error_messages", model: @weight
 
 /.nav.justify-content-end 
 /= link_to t("children.links.to_children"), url: children_path, class: "nav-link"

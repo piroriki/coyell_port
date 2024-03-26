@@ -1,11 +1,7 @@
 h2 = t".title"
 
-/ エラーメッセージが表示されるようにする
-- if @l_breast_milk.errors.present?
-  ul#error_explanation 
-    - left_breast_milk.error.full_messages.each do |message|
-      li = message 
-
+.errors
+  = render "shared/error_messages", model: @left_breast_milk
 /.nav.justify-content-end 
 /= link_to t("children.links.to_children"), url: children_path, class: "nav-link"
 

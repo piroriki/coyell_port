@@ -1,10 +1,7 @@
 h2 = t".title"
 
-/ エラーメッセージが表示されるようにする
-- if @bath.errors.present?
-  ul#error_explanation 
-    - bath.error.full_messages.each do |message|
-      li = message 
+.errors
+  = render "shared/error_messages", model: @bath
 
 /.nav.justify-content-end 
 /= link_to t("children.links.to_children"), url: children_path, class: "nav-link"

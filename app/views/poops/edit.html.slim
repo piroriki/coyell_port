@@ -1,10 +1,7 @@
 h2 = t".title"
 
-/ エラーメッセージが表示されるようにする
-- if @poop.errors.present?
-  ul#error_explanation 
-    - poop.error.full_messages.each do |message|
-      li = message 
+.errors
+  = render "shared/error_messages", model: @poop
 
 /.nav.justify-content-end 
 /= link_to t("children.links.to_children"), url: children_path, class: "nav-link"
