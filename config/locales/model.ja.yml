@@ -19,6 +19,7 @@ ja:
       bath:                お風呂
       diary:               日記
       diary_tag:           タグ
+      study_aid_book:      参考書
     attributes: # 各種モデルの属性定義
       admin: # 管理者
         name:              管理者名
@@ -45,10 +46,9 @@ ja:
       milk:
         amount:            量
       diary:
-        title:             タイトル
-        content:           本文
         photo:             画像
-        tag_name:          タグ
+      study_aid_book:
+        image:             画像
   attributes: # 全モデルで共通する属性を定義
     id:                    ID
     password:              パスワード
@@ -58,6 +58,9 @@ ja:
     time:                  時間
     memo:                  メモ
     kinds:                 種類
+    title:                 タイトル
+    content:               本文
+    tag_name:              タグ
   enums: # enum用
     user:
       role:

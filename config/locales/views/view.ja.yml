@@ -38,6 +38,7 @@ ja:
       symptom:            症状
       bath:               お風呂
       diary:              日記
+      estudy_aid_book:    参考書
   helpers:
     submit: # 共通ボタン表記
       create:             登録する
