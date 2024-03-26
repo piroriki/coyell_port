@@ -6,12 +6,9 @@ class DirectMessagesController < ApplicationController
     # entriesで、自分が保持するroom_idを全て取得する
     entries = current_user.entries.pluck(:room_id)
     # 相手と自分で共通のルームを持っているか確認する
-    user_room = Entry.find_by(user_id: @user.id, room_id: rooms)
-    
-    # 共通のルームを持たない場合は、nilを返す
-    room = nil
+    user_rooms = Entry.find_by(user_id: @user.id, room_id: entries)
    
-    if user_room.nil?
+    if user_rooms.nil?
       # 共通のルームがなければ、新たに作成する
       @room = Room.new
       @room.save
@@ -31,6 +28,12 @@ class DirectMessagesController < ApplicationController
   def create
     @direct_message = current_user.direct_messages.new(direct_message_params)
     @direct_message.save
+  end
+
+  def destroy
+    # ログイン中のユーザーに関するチャットメッセージを削除
+    @direct_message = current_user.direct_messages.find(params[:id])
+    @direct_message.destroy
   end
    
    private

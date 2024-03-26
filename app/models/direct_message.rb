@@ -5,7 +5,7 @@ class DirectMessage < ApplicationRecord
   belongs_to :room
 
   # データが作成されたら、非同期でブロードキャスト処理を実行させる
-  after_create_commit { ChatBroadcastJob.perform_later self }
+  after_create_commit { DirectMessageBroadcastJob.perform_later self }
 
   # バリデーション
   validates :message, presence: true

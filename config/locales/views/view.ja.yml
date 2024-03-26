@@ -10,6 +10,7 @@ ja:
       to_user_login:      ログイン
       logout:             ログアウト
       guest_login:        ゲストログイン(閲覧用)
+      to_dm:              チャットを利用する
     messages:
       created:            登録しました
       updated:            更新しました

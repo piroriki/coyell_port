@@ -1,15 +1,6 @@
-/ チャット履歴の表示
-.direct-messages
-- direct_messages.each do |dm| 
-  - if dm.user_id == current_user.id 
-  / 自分用
-  .message.self 
-    .message-body 
-      <p style = "text-align: left;"><%= dm.message %></p> 
-  - else 
-  / 相手用
-  .message.other 
-    .message-sender
-      <p style = "text-align: right;"><%= dm.name %></p> 
-    .message-body 
-      <p style = "text-align: right;"><%= dm.message %></p> 
+/ 非同期通信のため、チャットテキスト部分をパーシャル化
+.right-container.d-flex.justify-content-end
+  .message-text
+    = direct_message.message
+  
+  = button_to "削除", direct_message_path(direct_message), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" }, class: "btn btn-danger btn-sm ml-2", remote: true, id: "delete_direct_message_#{direct_message.id}"

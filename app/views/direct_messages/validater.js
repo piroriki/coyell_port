@@ -1,0 +1,1 @@
+$('.errors').html("<%= j(render 'shared/errror_messages', obj: @direct_message) %>");

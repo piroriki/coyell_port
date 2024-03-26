@@ -47,8 +47,8 @@ Rails.application.routes.draw do
   get "search_tag", to: "diaries#search_tag"
 
   # チャット用
-  get "direct_message/:id", to: "direct_messages#show", as: "direct_message"
-  resource :direct_messages, only: [:create]
+  resources :direct_messages, only: [:show, :create, :destroy]
+ 
   #resources :rooms
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

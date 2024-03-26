@@ -6,6 +6,7 @@
       / ログイン済みユーザーの場合
       li = link_to t("dictionary.links.to_user_profile"), user_profile_path(id: current_user.id)
       li = link_to t("dictionary.links.logout"),          logout_path, data: { "turbo-method": :delete }
+      li = link_to t("dictionary.links.to_dm"),           direct_message_path(id: current_user.id), class: "ml-3"
     - else
       / ログインしていないユーザーの場合
       li = link_to t("dictionary.links.to_user_signup"), new_user_registration_path
