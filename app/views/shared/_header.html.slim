@@ -7,9 +7,6 @@
       li = link_to t("dictionary.links.to_user_profile"), user_profile_path(id: current_user.id)
       li = link_to t("dictionary.links.logout"),          logout_path, data: { "turbo-method": :delete }
       li = link_to t("dictionary.links.to_dm"),           direct_message_path(id: current_user.id), class: "ml-3"
-      / 管理者権限を付与されていれば、ユーザー一覧を表示できるようにする
-      - if current_user.admin?
-        li.nav-item = link_to "ユーザー一覧", rails_admin_path, class: "nav-link" 
     - else
       / ログインしていないユーザーの場合
       li = link_to t("dictionary.links.to_user_signup"), new_user_registration_path

@@ -43,5 +43,5 @@ class RoomsController < ApplicationController
     room                    = Room.find(params[:id])
     room.destroy
     redirect_back users_rooms_path
-
+  end
 end

@@ -6,7 +6,7 @@ RailsAdmin.config do |config|
    # 管理画面にアクセスする前に、:userスコープのユーザーを認証する
   config.authenticate_with do
     authenticate_or_request_with_http_basic('Site Message') do |username, password|
-      username == "admin" && password == "password"
+      username == "foo" && password == "bar"
     end
     #warden.authenticate! scope: :user
   end
