@@ -14,6 +14,9 @@ class User < ApplicationRecord
   # 子供との関連づけ
   has_many :children, dependent: :destroy
 
+  # 参考書との関連づけ
+  has_many :study_aid_books, dependent: :destroy
+
   # チャット用中間テーブル、チャットとの関連付け
   has_many :rooms,               through:   :entries
   has_many :entries,             dependent: :destroy
