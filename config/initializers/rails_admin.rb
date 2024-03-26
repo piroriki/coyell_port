@@ -3,14 +3,18 @@ RailsAdmin.config do |config|
 
   ### Popular gems integration
 
-  ## == Devise ==
+   # 管理画面にアクセスする前に、:userスコープのユーザーを認証する
   config.authenticate_with do
-    warden.authenticate! scope: :user
+    authenticate_or_request_with_http_basic('Site Message') do |username, password|
+      username == "admin" && password == "password"
+    end
+    #warden.authenticate! scope: :user
   end
-  
+
+  #rails_adminでcurrent_userを使用するための設定 
   config.current_user_method(&:current_user)
 
-  ## == CancanCan ==
+  # rails_adminのアクセス制限に、cancancanを使用するための設定
   config.authorize_with :cancancan
 
   ## == Pundit ==

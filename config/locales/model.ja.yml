@@ -59,6 +59,10 @@ ja:
     memo:                  メモ
     kinds:                 種類
   enums: # enum用
+    user:
+      role:
+        non_admin:         一般
+        admin:             管理者
     child:
       gender:
         other:             その他

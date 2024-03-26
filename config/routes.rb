@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  # rails_adminを利用して管理者専用ルーティング
   mount RailsAdmin::Engine => '/e', as: 'rails_admin'
 
   # 管理者用
