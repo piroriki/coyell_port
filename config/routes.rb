@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/e', as: 'rails_admin'
 
   # 管理者用
   namespace :admin do

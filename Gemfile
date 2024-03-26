@@ -30,6 +30,10 @@ gem "jquery-rails"
 # デバッグ用
 gem "pry-rails"
 
+# 管理者権限用
+gem "rails_admin"
+gem "cancancan"
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
@@ -89,3 +93,4 @@ group :test do
   gem "selenium-webdriver"
   gem "rspec-rails", "~> 4.0"
 end
+gem "sassc-rails"
