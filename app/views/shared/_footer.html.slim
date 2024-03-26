@@ -1,4 +1,7 @@
-.nav.navbar.navbar-expand-lg.navbar-light.bg-dark.fixed-bottom
-= "Cöyёll"
-- if current_user.try(:admin?)
-  = link_to "管理者ログイン", rails_admin_path
+footer.footer
+  .conteiner
+    p.text-muted
+      = "Cöyёll"
+      / 管理者がログインしている場合は、管理専用画面を表示する
+      - if current_user.try(:admin?)
+        = link_to t("admins.links.to_admin_settings"), rails_admin_path
