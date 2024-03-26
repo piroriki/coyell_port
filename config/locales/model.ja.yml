@@ -22,6 +22,7 @@ ja:
     attributes: # 各種モデルの属性定義
       admin: # 管理者
         name:              管理者名
+        email:             メールアドレス
       user: # 家族ユーザー
         name:              お名前
         current_password:  現在のパスワード

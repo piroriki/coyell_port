@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   # ログイン後、子供一覧画面に遷移
   def after_sign_in_path_for(resource)
-    children_path
+    root_path
   end
 
   private
