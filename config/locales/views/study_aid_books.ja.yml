@@ -1,0 +1,17 @@
+ja:
+  admin:
+    study_aid_books:
+      new:
+        title:                  参考書の新規作成
+      edit:
+        title:                  参考書の編集
+      show:
+        title:                  参考書の詳細
+      index:
+        title:                  参考書の一覧
+      links:
+        to_all_study_aid_books: 一覧
+        to_new_study_aid_book:  登録
+        to_edit_study_aid_book: 編集
+        to_show_study_aid_book: 詳細
+        destroy_study_aid_book: 削除
