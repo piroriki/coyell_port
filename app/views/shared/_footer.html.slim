@@ -5,3 +5,4 @@ footer.footer
       / 管理者がログインしている場合は、管理専用画面を表示する
       - if current_user.try(:admin?)
         = link_to t("admins.links.to_admin_settings"), rails_admin_path
+        = link_to t("study_aid_books.links.to_all_study_aid_books"), admin_study_aid_books_path
