@@ -1,0 +1,8 @@
+h2 = t".title"
+
+= link_to t("admin.study_aid_books.links.to_new_study_aid_book"), new_admin_study_aid_book_path(id: current_user.id)
+
+- @study_aid_books.each do |sab|
+  = sab.title 
+  = sab.content 
+  = sab.image 

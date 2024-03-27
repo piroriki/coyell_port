@@ -1,0 +1,9 @@
+h2 =t".title"
+
+.errors
+  = render "shared/error_messages", model: @study_aid_book
+
+.nav.justify-content-end 
+  = link_to t("admin.study_aid_books.links.to_all_study_aid_books"), admin_study_aid_books_path, class: "nav-link"
+
+= render "admin/study_aid_books/form"

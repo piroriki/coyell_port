@@ -1,0 +1,23 @@
+= form_with(model: [:admin, @study_aid_book], class: "nav-link", local: true) do |f|
+
+  .form-group 
+    = f.label          :title
+    = f.text_field     :title, autofocus: true, autocomplete: "title", placeholder: true, class: "form-control", id: "sab_title"
+
+  .form-group 
+    = f.label          :content
+    = f.text_area      :content, autofocus: true, autocomplete: "content", placeholder: true, class: "form-control", id: "sab-content"
+  
+  / 画像はfile_field指定
+  .form-group 
+    = f.label          :image
+    = f.file_field     :image, class: "form-control", id: "sab_photo"
+
+  .form-group.mt-3.mb-3
+    = f.label          "タグ(,で区切ると、複数タグを登録できます)"
+    = f.text_field     :name, value: @tag_list, row: 2, class: "form-control" 
+
+  .form-group 
+    = f.hidden_field   :user_id, value: current_user.id
+
+  = f.submit button_text
