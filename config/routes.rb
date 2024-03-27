@@ -9,9 +9,9 @@ Rails.application.routes.draw do
       get "signup",      to: "users/registrations#new"
       get "login",       to: "users/sessions#new"
       delete "logout",   to: "users/sessions#destroy"
-      #resources :dashboard, only: [:index]
-      root to: "dashboard#index"
     end
+    # 管理者用コントローラを名前空間でグループ化する
+    resources :study_aid_books
   end
   
   # ユーザー用
