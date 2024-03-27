@@ -15,7 +15,11 @@ table.table.table-hover
     - @study_aid_books.each do |sab|
       td = link_to "#{sab.title}", admin_study_aid_book_path(id: sab.id), data: { turbo_method: :get }
       td = sab.content 
-      td = sab.image 
+      - if sab.image.present?
+        / 画像があれば画像ファイルのURLを取得して表示する
+        td = image_tag sab.image.url 
+      - else 
+        td = "no image"
       td = link_to t("admin.study_aid_books.links.to_edit_study_aid_book"), edit_admin_study_aid_book_path(id: sab.id)
       td = link_to t("admin.study_aid_books.links.destroy_study_aid_book"), admin_study_aid_book_path(id: sab.id),
            data: { turbo_method: :delete, turbo_confirm: "#{sab.title}を削除してもよろしいですか？" }, class: "btn btn-danger"

@@ -25,9 +25,9 @@ class Admin::StudyAidBooksController < ApplicationController
   end
 
   def update
-    @admin = User.find(params[:id])
+    @admin = current_user
     @study_aid_book = StudyAidBook.find(params[:id])
-    if @study_aid_book.save(study_aid_book_params)
+    if @study_aid_book.update(study_aid_book_params)
       flash[:success] = "編集が完了しました"
       redirect_to admin_study_aid_books_path
     else

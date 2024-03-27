@@ -15,7 +15,7 @@ table.table.table-hover
         td = @study_aid_book.title
         td = @study_aid_book.content
         - if @study_aid_book.image.present?
-          / 画像があれば、@diaryから画像ファイルのURLを取得して表示する
+          / 画像があれば画像ファイルのURLを取得して表示する
           td = image_tag @study_aid_book.image.url 
         - else 
           td = "no image"
