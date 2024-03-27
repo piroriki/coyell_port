@@ -6,9 +6,8 @@ class Admin::BaseController < ApplicationController
 
   private
 
+    # 管理者権限が付与されたユーザーのみ、管理機能を使用できるようにする
     def check_admin
-      unless current_user&.admin?
-        redirect_to root_path, alert: "管理者権限がありません"
-      end
+      redirect_to root_path unless current_user.admin?
     end
 end
