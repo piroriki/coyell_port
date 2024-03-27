@@ -2,7 +2,21 @@ h2 = t".title"
 
 = link_to t("admin.study_aid_books.links.to_new_study_aid_book"), new_admin_study_aid_book_path(id: current_user.id)
 
-- @study_aid_books.each do |sab|
-  = sab.title 
-  = sab.content 
-  = sab.image 
+.mb-3 
+table.table.table-hover 
+  thead.thead-default 
+    tr 
+      th = StudyAidBook.human_attribute_name(:title)
+      th = StudyAidBook.human_attribute_name(:content)
+      th = StudyAidBook.human_attribute_name(:image)
+      th = t"dictionary.items.edit"
+      th = t"dictionary.items.destroy"
+  tbody 
+    - @study_aid_books.each do |sab|
+      td = link_to "#{sab.title}", admin_study_aid_book_path(id: sab.id), data: { turbo_method: :get }
+      td = sab.content 
+      td = sab.image 
+      td = link_to t("admin.study_aid_books.links.to_edit_study_aid_book"), edit_admin_study_aid_book_path(id: sab.id)
+      td = link_to t("admin.study_aid_books.links.destroy_study_aid_book"), admin_study_aid_book_path(id: sab.id),
+           data: { turbo_method: :delete, turbo_confirm: "#{sab.title}を削除してもよろしいですか？" }, class: "btn btn-danger"
+

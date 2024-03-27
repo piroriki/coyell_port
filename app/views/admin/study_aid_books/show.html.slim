@@ -1,0 +1,28 @@
+h2 = t".title"
+
+.mb-3 
+table.table.table-hover 
+  thead.thead-default 
+    tr 
+      th = StudyAidBook.human_attribute_name(:title)
+      th = StudyAidBook.human_attribute_name(:content)
+      th = StudyAidBook.human_attribute_name(:image)
+      th = t"dictionary.items.edit"
+      th = t"dictionary.items.destroy"
+      /th = "タグ"
+  tbody 
+      tr 
+        td = @study_aid_book.title
+        td = @study_aid_book.content
+        - if @study_aid_book.image.present?
+          / 画像があれば、@diaryから画像ファイルのURLを取得して表示する
+          td = image_tag @study_aid_book.image.url 
+        - else 
+          td = "no image"
+        td = link_to t("admin.study_aid_books.links.to_edit_study_aid_book"), edit_admin_study_aid_book_path(id: @study_aid_book.id), data: { turbo_method: :get }
+        td = link_to t("admin.study_aid_books.links.destroy_study_aid_book"), admin_study_aid_book_path(id: @study_aid_book.id),
+             data: { turbo_method: :delete, turbo_confirm: "#{@study_aid_book.title}を削除してよろしいですか？" }, class: "btn btn-danger"
+        / タグ表示用
+        /- @diary_tags.each do |tag|
+          span.badge.rounded-pill.text-bg-dark 
+            td = link_to tag.name, search_tag_path(diary_tag_id: tag.id)
